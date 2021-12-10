@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster&display=swap%27");
+
+:root {
+  --bg-color: #f2f2f2;
+  --color-primary: #023e73;
+  --color-primary-60: #023e7379;
+  --color-secundary: #084da6;
+  --bg-color-dark: #bfa26b;
+  --color-contrast: #a60321;
+}
+
+body {
+  margin: auto 0;
+}
+
+header {
+  width: 100%;
+  height: 400px;
+
+  background: url("../assets/img/patternpatos.png");
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-container {
+  width: 450px;
+  height: 220px;
+  background: var(--color-primary-60);
+  border-radius: 10%;
+}
+
+.title-text {
+  color: white;
+
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.search-container {
+  text-align: center;
+}
+.container-gallery-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cta {
+  padding: 0.75em 2em;
+  border: 3px solid var(--color-contrast);
+  border-radius: 15px;
+  color: var(--color-contrast);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btn-cta:hover {
+  background-color: var(--color-contrast);
+  color: #ffffff;
+}
+
+.cta-custom-events {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em auto;
+  color: var(--color-primary);
+}
+
+.cta-custom-events h4 {
+  font-family: "Lobster", cursive;
+  font-size: 32px;
+}
+.cta-custom-events p {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 24px;
+}
+
+footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--color-primary);
+  color: var(--bg-color);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-img {
+  width: 80%;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.container-img > img {
+  max-height: 50px;
+}
+
+a {
+  color: var(--bg-color);
+}
+
+a:visited {
+  color: var(--bg-color-dark);
+}

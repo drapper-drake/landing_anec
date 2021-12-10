@@ -26,5 +26,16 @@
     "vite": "^2.7.0"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drapper-drake/landing_anec.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/drapper-drake/landing_anec/issues"
+  },
+  "homepage": "https://github.com/drapper-drake/landing_anec#readme",
+  "description": ""
 }
