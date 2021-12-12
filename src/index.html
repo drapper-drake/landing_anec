@@ -5,56 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="shortcut icon" href="assets/img/patoNavidad.png">
     <link rel="stylesheet" href="./css/index.css" />
-    <script type="module" src="./js/index.js"></script>
+    <script defer src="./js/index.js"></script>
   </head>
   <body>
     <header>
       <div class="hero-container">
         <div class="title-text">
-          <h1>¿No tienes nada que hacer?</h1>
-          <h1>Lánzate a mirar Ànec Events</h1>
-          <h3>Consulta los eventos próximos</h3>
+          <h1>¿Buscas qué hacer hoy en Alicante?</h1>
+          <p>Encuentra aquí las mejores propuestas de teatro, monólogos, musicales, conciertos, ferias, exposiciones, magia, cenas con espectáculo, rutas, y más opciones de cultura para disfrutar cada día.
+           <br> No te lo puedes perder. </p>
         </div>
-        <div class="search-container">
-          <label for="search">
-            <input type="text" />
-          </label>
-          <button name="search">Buscar</button>
-        </div>
+        <button class="btn-cta">Empezar</button>
       </div>
     </header>
     <main>
       <div class="container-gallery-card">
-        <div class="card-escape">
+        <div class="card-one">
           <img src="./assets/img/prison.png" alt="Encarcelado" />
-          <h3>No te quedes en casa sin salir</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+          <h3 class="card-title">No te pierdas nada</h3>
+          <p>Se celebran eventos sobre prácticamente cualquier tema que se te ocurra, desde juegos en línea y fotografía hasta yoga y senderismo.</p>
         </div>
-        <div class="card-doubts">
+        <div class="card-one">
           <img src="./assets/img/feedback.png" alt="Consulta" />
-          <h3>Consulta las dudas que tengas</h3>
+          <h3 class="card-title">Consulta las dudas que tengas</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
         </div>
-        <div class="card-news">
+        <div class="card-one">
           <img src="./assets/img/events.png" alt="Eventos" />
-          <h3>Todos los evento de tu provincia juntos</h3>
+          <h3 class="card-title">Todos los evento de tu provincia juntos</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
         </div>
       </div>
-      <div class="cta-custom-events">
-        <img
-          src="./assets/img/customEvents.png"
-          alt="Conejo dudando entre muchas posibilidades"
-        />
-        <div class="info-customization">
-          <h4>Dinos qué te encanta</h4>
-          <p>
-            Encontraremos recomendaciones para ti para que no te pierdas ningún
-            evento, sin necesidad de iniciar sesión.
-          </p>
-          <button class="btn-cta">Empezar</button>
-        </div>
+      <div class="gallery-events">
+        <h2>Próximos eventos en Alicante</h2>
+        <div class="container-events"></div>
+        <button class="btn-cta">Empezar</button>
       </div>
     </main>
     <footer>
@@ -83,11 +70,6 @@
             alt="Sistema Nacional de Garantía Juvenil"
           />
         </div>
-      </div>
-      <div class="icons-license">
-        Iconos diseñados por
-        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
-        <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
       </div>
     </footer>
   </body>

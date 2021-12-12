@@ -16,9 +16,7 @@ body {
 header {
   width: 100%;
   height: 400px;
-
   background: url("../assets/img/patternpatos.png");
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,26 +25,51 @@ header {
 
 .hero-container {
   width: 450px;
-  height: 220px;
+  padding: 25px;
   background: var(--color-primary-60);
   border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-text {
   color: white;
-
   font-family: Roboto, sans-serif;
   text-align: center;
 }
 
-.search-container {
-  text-align: center;
+main {
+  width: 80%;
+  margin: 1.5em auto;
 }
+
 .container-gallery-card {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-gallery-card .card-one {
+  width: 30%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container-gallery-card h3 {
+  font-family: Lobster, sans-serif;
+  text-align: center;
+}
+
+.container-gallery-card p {
+  color: grey;
+  font-family: Lobster, sans-serif;
+  text-align: center;
 }
 
 .btn-cta {
@@ -77,12 +100,27 @@ header {
 }
 
 .cta-custom-events h4 {
-  font-family: "Lobster", cursive;
+  font-family: Lobster, cursive;
   font-size: 32px;
 }
+
 .cta-custom-events p {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 24px;
+}
+
+.gallery-events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-events h2 {
+  font-family: Lobster, cursive;
+  font-size: 40px;
+  color: var(--color-contrast);
+  text-decoration: underline;
 }
 
 footer {
@@ -112,10 +150,37 @@ footer {
   max-height: 50px;
 }
 
-a {
+
+/* Estilos de las tarjetas de eventos */
+
+.container-events {
+  height: min-content;
+  margin: 56px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 39px;
+  grid-row-gap: 39px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 18px;
+}
+
+.card {
+  background: var(--color-primary);
+  border-radius: 25px;
+  text-align: center;
   color: var(--bg-color);
 }
 
-a:visited {
-  color: var(--bg-color-dark);
+.card > img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.card > h4 {
+  font-family: Lobster, cursive;
+  font-size: 32px;
+  margin-top: 10px;
+  padding: 5px;
 }
