@@ -1,7 +1,7 @@
 function createEvents() {
   // fetch importa los datos del JSON
   // response.json los parsea y almacena en data
-  fetch("/js/eventosNavidad.json")
+  fetch("../assets/eventosNavidad.json")
     .then((response) => response.json())
     .then((data) => {
       // data es un array de eventos
