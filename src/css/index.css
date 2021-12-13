@@ -53,7 +53,7 @@ main {
 }
 
 .container-gallery-card .card-one {
-  width: 30%;
+  width: 300px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -183,4 +183,46 @@ footer {
   font-size: 32px;
   margin-top: 10px;
   padding: 5px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  .hero-container {
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .title-text {
+    width: 300px;
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .container-gallery-card {
+    width: 80vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-events h2 {
+    font-size: 28px;
+  }
+
+  .container-events {
+    grid-template-columns: 1fr;
+  }
+
+  .container-img {
+    width: 300px;
+  }
 }
