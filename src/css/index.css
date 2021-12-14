@@ -4,7 +4,7 @@
   --color-primary-60: #023e7379;
   --bg-light: #F2F2F2;
   --bg-dark: #0B3762;
-  --bg-dark-transp: #0B376280;
+  --bg-dark-80: #0B376280;
   --color-text-bg-light: #342618; /* Usado en texto (p) de card-one y sombra de cta */
   --color-text-bg-dark: #FFFFFF;
   --color-contrast-bg-light: #0B4DA5;
@@ -31,7 +31,7 @@ header {
 .hero-container {
   width: 450px;
   padding: 25px;
-  background: var(--bg-dark-transp);
+  background: var(--bg-dark-80);
   border-radius: 10%;
   display: flex;
   flex-direction: column;
@@ -82,19 +82,22 @@ main {
   padding: 0.75em 2em;
   border: 3px solid var(--color-links-cta);
   border-radius: 15px;
-  color: var(--color-links-cta);
+  background-color: var(--color-links-cta);
+  color: var(--color-text-bg-dark);
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  text-shadow: 1px 1px var(--color-text-bg-light);
   cursor: pointer;
+  box-shadow: 0 4px 8px 2px var(--bg-dark-80);
+  /*Sombra interior*/
+  /*box-shadow: 0 4px 8px 2px inset var(--bg-dark-80);*/
   transition: 1s;
 }
 
 .btn-cta:hover {
-  background-color: var(--color-links-cta);
-  color: var(--color-text-bg-dark);
+  background-color: var(--bg-light);
+  color: var(--color-links-cta);
 }
 
 .cta-custom-events {
@@ -130,34 +133,6 @@ main {
   text-decoration: underline;
 }
 
-footer {
-  width: 100%;
-  min-height: 200px;
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.container-img {
-  width: 80%;
-  background: var(--bg-light);
-  border-radius: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
-.container-img > img {
-  max-height: 50px;
-}
-
-
 /* Estilos de las tarjetas de eventos */
 
 .container-events {
@@ -190,6 +165,34 @@ footer {
   font-size: 32px;
   margin-top: 10px;
   padding: 5px;
+}
+/* Footer */
+footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-img {
+  width: 80%;
+  /*No le pongo variable porque depende de los logos*/
+  background: #FFFFFF;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.container-img > img {
+  max-height: 50px;
 }
 
 /* Responsive */
