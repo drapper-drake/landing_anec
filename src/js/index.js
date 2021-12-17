@@ -69,7 +69,7 @@ function dateFormat(month) {
 
 const allCTA = document.querySelectorAll(".btn-cta");
 allCTA.forEach((btn) => btn.addEventListener("click", () => {
-  window.location.href = "https://www.anecevents.com/";
+  window.location.href = "https://www.app.anecevents.com/";
 }));
 
 /* Función del slider de logos de patrocinadores
