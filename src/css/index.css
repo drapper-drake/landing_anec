@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster&display=swap%27");
 
 :root {
-  --bg-color: #f2f2f2;
-  --color-primary: #023e73;
   --color-primary-60: #023e7379;
-  --color-secundary: #084da6;
-  --bg-color-dark: #bfa26b;
-  --color-contrast: #a60321;
+  --bg-light: #F2F2F2;
+  --bg-dark: #0B3762;
+  --bg-dark-80: #0B376280;
+  --color-text-bg-light: #342618; /* Usado en texto (p) de card-one y sombra de cta */
+  --color-text-bg-dark: #FFFFFF;
+  --color-contrast-bg-light: #0B4DA5;
+  --color-contrast-bg-dark: #FFA438; /* No usado aún */
+  --color-links-cta: #FFA438;
+  --color-links-visited: #8197BA; /* No usado aún */
 }
 
 body {
   margin: auto 0;
+  background: var(--bg-light);
 }
 
 header {
@@ -26,7 +31,7 @@ header {
 .hero-container {
   width: 450px;
   padding: 25px;
-  background: var(--color-primary-60);
+  background: var(--bg-dark-80);
   border-radius: 10%;
   display: flex;
   flex-direction: column;
@@ -35,7 +40,7 @@ header {
 }
 
 .title-text {
-  color: white;
+  color: var(--color-text-bg-dark);
   font-family: Roboto, sans-serif;
   text-align: center;
 }
@@ -61,33 +66,38 @@ main {
   align-items: center;
 }
 
-.container-gallery-card h3 {
+.container-gallery-card h2 {
+  color: var(--color-contrast-bg-light);
   font-family: Lobster, sans-serif;
   text-align: center;
 }
 
 .container-gallery-card p {
-  color: grey;
+  color: var(--color-text-bg-light);
   font-family: Lobster, sans-serif;
   text-align: center;
 }
 
 .btn-cta {
   padding: 0.75em 2em;
-  border: 3px solid var(--color-contrast);
+  border: 3px solid var(--color-links-cta);
   border-radius: 15px;
-  color: var(--color-contrast);
+  background-color: var(--color-links-cta);
+  color: var(--color-text-bg-dark);
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
+  box-shadow: 0 4px 8px 2px var(--bg-dark-80);
+  /*Sombra interior*/
+  /*box-shadow: 0 4px 8px 2px inset var(--bg-dark-80);*/
   transition: 1s;
 }
 
 .btn-cta:hover {
-  background-color: var(--color-contrast);
-  color: #ffffff;
+  background-color: var(--bg-light);
+  color: var(--color-links-cta);
 }
 
 .cta-custom-events {
@@ -96,7 +106,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   margin: 1em auto;
-  color: var(--color-primary);
+  color: var(--bg-dark);
 }
 
 .cta-custom-events h4 {
@@ -116,40 +126,12 @@ main {
   align-items: center;
 }
 
-.gallery-events h2 {
+.gallery-events h3 {
   font-family: Lobster, cursive;
   font-size: 40px;
-  color: var(--color-contrast);
+  color: var(--color-contrast-bg-light);
   text-decoration: underline;
 }
-
-footer {
-  width: 100%;
-  min-height: 200px;
-  background-color: var(--color-primary);
-  color: var(--bg-color);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.container-img {
-  width: 80%;
-  background: white;
-  border-radius: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
-.container-img > img {
-  max-height: 50px;
-}
-
 
 /* Estilos de las tarjetas de eventos */
 
@@ -165,10 +147,10 @@ footer {
 }
 
 .card {
-  background: var(--color-primary);
+  background: var(--bg-dark);
   border-radius: 25px;
   text-align: center;
-  color: var(--bg-color);
+  color: var(--bg-light);
 }
 
 .card > img {
@@ -183,6 +165,34 @@ footer {
   font-size: 32px;
   margin-top: 10px;
   padding: 5px;
+}
+/* Footer */
+footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-img {
+  width: 80%;
+  /*No le pongo variable porque depende de los logos*/
+  background: #FFFFFF;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.container-img > img {
+  max-height: 50px;
 }
 
 /* Responsive */
@@ -214,7 +224,7 @@ footer {
     align-items: center;
   }
 
-  .gallery-events h2 {
+  .gallery-events h3 {
     font-size: 28px;
   }
 

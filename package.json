@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && vite build",
+    "netlify": "rm -rf dist && NODE_ENV=production vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
