@@ -145,26 +145,116 @@ main {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 18px;
 }
+.container-card {
+  width: 90%;
+  padding-bottom: 15em;
+  margin: 2em auto;
 
-.card {
-  background: var(--bg-dark);
-  border-radius: 25px;
-  text-align: center;
-  color: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
 }
 
-.card > img {
+.photoEvent{
   width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 25px 25px 0px 0px;
+  height: 340px;
+  background-color: var(--bg-light);
+  border-radius: 25px;
+  left: 200px;
 }
 
-.card > h4 {
-  font-family: Lobster, cursive;
-  font-size: 32px;
-  margin-top: 10px;
-  padding: 5px;
+.photoEvent > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 25px;
+}
+.card {
+  width: 100%;
+  height: 280px;
+  background: var(--bg-dark);
+  border-radius: 0 0 25px 25px;
+
+  display:flex;
+  flex-direction: row;
+  box-shadow: 0px 10px 12px 4px #00000050;
+  transition: 2s;
+
+  position: absolute;
+  bottom: 0;
+  /*text-align: center;*/
+  color: var(--color-text-bg-dark);
+}
+
+.info-card{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding: 0px 15px;
+}
+.info-card > h4 {
+  margin: 0;
+  height: 50%;
+  font-family: "Lobster two", cursive;
+  font-size: 2em;
+}
+
+.info-card > p {
+  margin: 0;
+
+  font-size: 1.5em;
+}
+.date-card{
+  width: 25%;
+  color: var(--color-text-bg-light);
+  background: var(--bg-light);
+  border-radius: 0 0 25px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  text-align: center;
+}
+hr{
+  width:75%;
+  border: none;
+  border-top: 1px solid var(--color-text-bg-light)
+}
+.icons-bar {
+  width: 90%;
+  height: 48px;
+  background: var(--bg-light);
+  border-radius: 25px;
+  margin: 10px auto;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+figure {
+  width: 50px;
+  height: 50px;
+
+  margin: 0;
+}
+
+figure > img {
+  width: 48px;
+  height: 48px;
+
+  margin-left: 10px;
+
 }
 /* Footer */
 footer {
@@ -196,6 +286,13 @@ footer {
 }
 
 /* Responsive */
+
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .container-events {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 @media screen and (max-width: 768px) {
   body {

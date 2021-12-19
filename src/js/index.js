@@ -1,75 +1,95 @@
-function createEvents() {
-  // fetch importa los datos del JSON
-  // response.json los parsea y almacena en data
+function createAll() {
+  // se importa el json, se parsea y almacena en data
   fetch("./data/eventosNavidad.json")
     .then((response) => response.json())
     .then((data) => {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
-
       for (let evento = 0; evento < 6; evento++) {
-        // Convertir string en número (fecha)
-        const convertDateStart = new Date(data[evento].dateStart);
-        const convertDateFinal = new Date(data[evento].dateFinal);
-
-        // Llamar función que imprime la fecha en el orden deseado
-        const dateStart = dateFormat(convertDateStart);
-        const dateFinal = dateFormat(convertDateFinal);
-
-        // TARJETA
-        const box = document.createElement("div");
-        box.className = "card";
-        // IMAGEN
-        const image = document.createElement("img");
-        image.className = "cta"; // para el modal
-        image.src = data[evento].photoEvent;
-        // NOMBRE
-        const name = document.createElement("h4");
-        name.innerText = data[evento].nameEvent;
-        // LUGAR
-        const place = document.createElement("p");
-        place.innerText = data[evento].site;
-        // FECHA
-        const date = document.createElement("p");
-        date.innerText = dateStart;
-        content.appendChild(box);
-        box.appendChild(image);
-        box.appendChild(name);
-        box.appendChild(place);
-        box.appendChild(date);
+        createEvent(data[evento], content, evento);
       }
     });
 }
 
+// ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
+function createEvent(evento, container, position) {
+  // Convertir string en número (fecha)
+  const convertDateStart = new Date(evento.dateStart);
+  const convertDateFinal = new Date(evento.dateFinal);
+  // Llamar función que imprime la fecha en el orden deseado
+  const dateStart = dateFormat(convertDateStart);
+  const dateFinal = dateFormat(convertDateFinal);
+  const containerCard = document.createElement("div");
+  containerCard.className = "container-card";
+  container.appendChild(containerCard);
+  // DIV DE LA IMAGEN
+  const photoEvent = document.createElement("div");
+  photoEvent.className = "photoEvent";
+  // IMAGEN
+  const image = document.createElement("img");
+  image.src = evento.photoEvent;
+  image.className = "cta";
+  // TARJETA
+  const card = document.createElement("div");
+  card.className = "card";
+  // DATOS TARJETA
+  const infoCard = document.createElement("div");
+  infoCard.className = "info-card";
+  // NOMBRE
+  const name = document.createElement("h4");
+  name.innerText = evento.nameEvent;
+  // LUGAR
+  const place = document.createElement("p");
+  place.innerText = evento.cityLocation;
+  // BARRA DE ICONOS
+  const bar = document.createElement("div");
+  bar.className = "icons-bar";
+  // DIV FECHA
+  const dateCard = document.createElement("div");
+  dateCard.className = "date-card";
+  // FECHA
+  const date = document.createElement("p");
+  date.innerText = dateStart;
+
+  container.appendChild(containerCard);
+  containerCard.appendChild(photoEvent);
+  photoEvent.appendChild(image);
+  containerCard.appendChild(card);
+  card.appendChild(infoCard);
+  card.appendChild(dateCard);
+  infoCard.appendChild(bar);
+  infoCard.appendChild(name);
+  infoCard.appendChild(place);
+  dateCard.appendChild(date);
+
+  // ICONOS
+  const IconContainer = document.createElement("figure");
+  const Icon = document.createElement("img");
+  bar.appendChild(IconContainer);
+  IconContainer.appendChild(Icon);
+
+  if (evento.free) {
+    IconContainer.title = "Evento GRATUITO";
+    Icon.src = "./img/free.png";
+    Icon.alt = "Evento GRATUITO";
+  } else {
+    IconContainer.title = "Evento DE PAGO";
+    Icon.src = "./img/pago.svg";
+    Icon.alt = "Evento DE PAGO";
+    bar.appendChild(IconContainer);
+    IconContainer.appendChild(Icon);
+  }
+}
 // Función que convierte número del mes en nombre del mes reducido en español
 function dateFormat(month) {
-  const monthShortNames = [
-    "Ene",
-    "Feb",
-    "Mar",
-    "Abr",
-    "May",
-    "Jun",
-    "Jul",
-    "Ago",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dic",
-  ];
-
-  return (
-    month.getDate() +
-    " " +
-    monthShortNames[month.getMonth()] +
-    ", " +
-    month.getFullYear()
-  );
+  const monthShortNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
+  return `${month.getDate()} ${monthShortNames[month.getMonth()]}`
+  ;
 }
 
 const allCTA = document.querySelectorAll(".btn-cta");
 allCTA.forEach((btn) => btn.addEventListener("click", () => {
-  window.location.href = "https://www.anecevents.com/";
+  window.location.href = "https://www.app.anecevents.com/";
 }));
 
 /* Función del slider de logos de patrocinadores
@@ -103,6 +123,6 @@ function responsiveFooter() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  createEvents();
+  createAll();
   responsiveFooter();
 });
