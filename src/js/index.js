@@ -83,14 +83,127 @@ function createEvent(evento, container, position) {
 
   if (evento.free) {
     IconContainer.title = "Evento GRATUITO";
-    Icon.src = "./img/free.png";
+    Icon.src = "./img/iconos/free.png";
     Icon.alt = "Evento GRATUITO";
   } else {
     IconContainer.title = "Evento DE PAGO";
-    Icon.src = "./img/pago.svg";
+    Icon.src = "./img/iconos/pago.svg";
     Icon.alt = "Evento DE PAGO";
     bar.appendChild(IconContainer);
     IconContainer.appendChild(Icon);
+  }
+  if(evento.village) {
+    let ruralIconContainer = document.createElement("figure");
+    let ruralIcon = document.createElement("img");
+    ruralIconContainer.title = "Evento RURAL";
+    ruralIcon.src = "./img/iconos/iconoVillage.png";
+    ruralIcon.alt = "Evento RURAL";
+    bar.appendChild(ruralIconContainer);
+    ruralIconContainer.appendChild(ruralIcon);
+  } else {
+    let cityIconContainer = document.createElement("figure");
+    let cityIcon = document.createElement("img");
+    cityIconContainer.title = "Evento URBANO";
+    cityIcon.src = "./img/iconos/iconoCity.png";
+    cityIcon.alt = "Evento URBANO";
+    bar.appendChild(cityIconContainer);
+    cityIconContainer.appendChild(cityIcon);
+  }
+  // ICONOS DE CATEGORÍAS
+  for(let cat in evento.category) {
+    switch(evento.category[cat]) {
+      case "Christmas":
+        let xmasIconContainer = document.createElement("figure");
+        let xmasIcon = document.createElement("img");
+        xmasIconContainer.title = "Evento NAVIDEÑO";
+        xmasIcon.src = "./img/iconos/iconoChristmas.png";
+        xmasIcon.alt = "Evento NAVIDEÑO";
+        bar.appendChild(xmasIconContainer);
+        xmasIconContainer.appendChild(xmasIcon);
+        break;
+      case "Kids":
+        let kidsIconContainer = document.createElement("figure");
+        let kidsIcon = document.createElement("img");
+        kidsIconContainer.title = "Evento INFANTIL";
+        kidsIcon.src = "./img/iconos/iconoKids.svg";
+        kidsIcon.alt = "Evento INFANTIL";
+        bar.appendChild(kidsIconContainer);
+        kidsIconContainer.appendChild(kidsIcon);
+        break;
+      case "Play":
+        let playIconContainer = document.createElement("figure");
+        let playIcon = document.createElement("img");
+        playIconContainer.title = "Evento LÚDICO";
+        playIcon.src = "./img/iconos/iconoPlay.svg";
+        playIcon.alt = "Evento LÚDICO";
+        bar.appendChild(playIconContainer);
+        playIconContainer.appendChild(playIcon);
+        break;
+      case "Music":
+        let musicIconContainer = document.createElement("figure");
+        let musicIcon = document.createElement("img");
+        musicIconContainer.title = "Evento MUSICAL";
+        musicIcon.src = "./img/iconos/iconoMusic.svg";
+        musicIcon.alt = "Evento MUSICAL";
+        bar.appendChild(musicIconContainer);
+        musicIconContainer.appendChild(musicIcon);
+        break;
+      case "Sports":
+        let sportIconContainer = document.createElement("figure");
+        let sportIcon = document.createElement("img");
+        sportIconContainer.title = "Evento DEPORTIVO";
+        sportIcon.src = "./img/iconos/iconoSports.png";
+        sportIcon.alt = "Evento DEPORTIVO";
+        bar.appendChild(sportIconContainer);
+        sportIconContainer.appendChild(sportIcon);
+        break;
+      case "Theatre":
+        let theatreIconContainer = document.createElement("figure");
+        let theatreIcon = document.createElement("img");
+        theatreIconContainer.title = "Evento TEATRAL";
+        theatreIcon.src = "./img/iconos/iconoTheatre.svg";
+        theatreIcon.alt = "Evento TEATRAL";
+        bar.appendChild(theatreIconContainer);
+        theatreIconContainer.appendChild(theatreIcon);
+        break;
+      case "Party":
+        let partyIconContainer = document.createElement("figure");
+        let partyIcon = document.createElement("img");
+        partyIconContainer.title = "Evento FESTIVO";
+        partyIcon.src = "./img/iconos/iconoParty.svg";
+        partyIcon.alt = "Evento FESTIVO";
+        bar.appendChild(partyIconContainer);
+        partyIconContainer.appendChild(partyIcon);
+        break;
+      case "Food":
+        let foodIconContainer = document.createElement("figure");
+        let foodIcon = document.createElement("img");
+        foodIconContainer.title = "Evento GASTRONÓMICO";
+        foodIcon.src = "./img/iconos/iconoFood.svg";
+        foodIcon.alt = "Evento GASTRONÓMICO";
+        bar.appendChild(foodIconContainer);
+        foodIconContainer.appendChild(foodIcon);
+        break;
+      case "Museum":
+        let museumIconContainer = document.createElement("figure");
+        let museumIcon = document.createElement("img");
+        museumIconContainer.title = "Evento de MUSEO";
+        museumIcon.src = "./img/iconos/iconoMuseum.svg";
+        museumIcon.alt = "Evento de MUSEO";
+        bar.appendChild(museumIconContainer);
+        museumIconContainer.appendChild(museumIcon);
+        break;
+      // Pongo el default por si acaso UwU
+      default:
+        let defaultIconContainer = document.createElement("figure");
+        let defaultIcon = document.createElement("img");
+        defaultIconContainer.title = "Evento POR DEFECTO";
+        defaultIcon.src = "./img/iconos/xmark-solid.svg";
+        defaultIcon.alt = "Evento POR DEFECTO";
+        bar.appendChild(defaultIconContainer);
+        defaultIconContainer.appendChild(defaultIcon);
+        break;
+    }
   }
 }
 // Función que convierte número del mes en nombre del mes reducido en español
