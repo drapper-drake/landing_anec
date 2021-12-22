@@ -25,7 +25,7 @@ header {
   background-size: contain;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   position:relative;
 }
@@ -39,6 +39,7 @@ header>img{
 .hero-container {
   width: 450px;
   padding: 25px;
+  margin-right: 135px;
   background: var(--bg-dark-80);
   border-radius: 25px;
   text-align: center;
