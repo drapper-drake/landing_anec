@@ -323,7 +323,9 @@ footer {
 .container-img > img {
   max-height: 50px;
 }
-
+.hidden{
+  display:none;
+}
 /* Responsive */
 
 
