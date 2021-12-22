@@ -112,7 +112,7 @@ main {
   border: 3px solid var(--color-links-cta);
   border-radius: 15px;
   background-color: var(--color-links-cta);
-  color: var(--color-text-bg-dark);
+  color: var(--bg-dark);
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 1.2em;
   font-weight: bold;
@@ -346,10 +346,11 @@ footer {
     margin-bottom: 50px;
   }
 
-  header>img{
+  header > img{
     display:none;
   }
   .hero-container {
+    margin-right: 0;
     justify-content: center;
     width: fit-content;
   }
