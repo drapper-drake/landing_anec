@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   --color-primary-60: #023e7379;
   --bg-light: #F2F2F2;
   --bg-dark: #0B3762;
-  --bg-dark-80: #0B376280;
+  --bg-dark-80: #0b3662e0;
   --color-text-bg-light: #342618; /* Usado en texto (p) de card-one y sombra de cta */
   --color-text-bg-dark: #FFFFFF;
   --color-contrast-bg-light: #0B4DA5;
@@ -19,40 +19,64 @@ body {
 }
 
 header {
-  width: 100%;
-  height: 400px;
-  background: url("../assets/img/patternpatos.png");
+  height: 450px;
+  margin-bottom: 150px;
+  background: url("../assets/img/Fondo-estampado.png");
+  background-size: contain;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
+  position:relative;
+}
+header>img{
+  max-height: 450px;
+  position:absolute;
+  bottom: -75px;
+  left: 100px;
 }
 
 .hero-container {
   width: 450px;
   padding: 25px;
+  margin-right: 135px;
   background: var(--bg-dark-80);
-  border-radius: 10%;
+  border-radius: 25px;
+  text-align: center;
+  color: var(--color-text-bg-dark);
+  z-index: 1;
+}
+
+.title-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--color-text-bg-dark);
 }
 
-.title-text {
-  color: var(--color-text-bg-dark);
-  font-family: Roboto, sans-serif;
-  text-align: center;
+.title-text h1 {
+  font-family: "Lobster two", cursive;
+  font-style: italic;
+}
+
+.title-text p {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.title-text span {
+  color: var(--color-contrast-bg-dark);
 }
 
 main {
-  width: 80%;
-  margin: 1.5em auto;
+  width: 90%;
+  margin: 32px  auto;
 }
 
 .container-gallery-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -66,38 +90,42 @@ main {
   align-items: center;
 }
 
-.container-gallery-card h2 {
+.card-one>img{
+  height: 150px;
+}
+
+.card-one h2 {
   color: var(--color-contrast-bg-light);
-  font-family: Lobster, sans-serif;
+  font-family: "Lobster two", cursive;
   text-align: center;
 }
 
-.container-gallery-card p {
+.card-one p {
   color: var(--color-text-bg-light);
-  font-family: Lobster, sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: bold;
   text-align: center;
 }
 
 .btn-cta {
-  padding: 0.75em 2em;
+  padding: 14px 36px;
   border: 3px solid var(--color-links-cta);
   border-radius: 15px;
   background-color: var(--color-links-cta);
   color: var(--color-text-bg-dark);
   font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 4px 8px 2px var(--bg-dark-80);
-  /*Sombra interior*/
-  /*box-shadow: 0 4px 8px 2px inset var(--bg-dark-80);*/
-  transition: 1s;
+  transition: 800ms;
 }
 
 .btn-cta:hover {
   background-color: var(--bg-light);
-  color: var(--color-links-cta);
+  border-color: var(--color-contrast-bg-light);
+  color: var(--color-contrast-bg-light);
 }
 
 .cta-custom-events {
@@ -110,7 +138,7 @@ main {
 }
 
 .cta-custom-events h4 {
-  font-family: Lobster, cursive;
+  font-family: "Lobster two", cursive;
   font-size: 32px;
 }
 
@@ -127,24 +155,28 @@ main {
 }
 
 .gallery-events h3 {
-  font-family: Lobster, cursive;
+  font-family: "Lobster two", cursive;
   font-size: 40px;
   color: var(--color-contrast-bg-light);
-  text-decoration: underline;
+}
+
+.gallery-events span {
+  color: var(--color-contrast-bg-dark);
 }
 
 /* Estilos de las tarjetas de eventos */
 
 .container-events {
   height: min-content;
-  margin: 56px auto;
+  width: 95%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 39px;
-  grid-row-gap: 39px;
+  grid-column-gap: 18px;
+  grid-row-gap: 18px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 18px;
 }
+
 .container-card {
   width: 90%;
   padding-bottom: 15em;
@@ -160,7 +192,7 @@ main {
   font-size: 16px;
 }
 
-.photoEvent{
+.photoEvent {
   width: 100%;
   height: 340px;
   background-color: var(--bg-light);
@@ -181,7 +213,7 @@ main {
   background: var(--bg-dark);
   border-radius: 0 0 25px 25px;
 
-  display:flex;
+  display: flex;
   flex-direction: row;
   box-shadow: 0px 10px 12px 4px #00000050;
   transition: 2s;
@@ -192,12 +224,13 @@ main {
   color: var(--color-text-bg-dark);
 }
 
-.info-card{
+.info-card {
   display: flex;
   flex-direction: column;
   width: 75%;
   padding: 0px 15px;
 }
+
 .info-card > h4 {
   margin: 0;
   height: 50%;
@@ -210,6 +243,7 @@ main {
 
   font-size: 1.5em;
 }
+
 .date-card{
   width: 25%;
   color: var(--color-text-bg-light);
@@ -224,11 +258,13 @@ main {
   font-weight: bold;
   text-align: center;
 }
-hr{
-  width:75%;
+
+hr {
+  width: 75%;
   border: none;
-  border-top: 1px solid var(--color-text-bg-light)
+  border-top: 1px solid var(--color-text-bg-light);
 }
+
 .icons-bar {
   width: 90%;
   height: 48px;
@@ -256,6 +292,7 @@ figure > img {
   margin-left: 10px;
 
 }
+
 /* Footer */
 footer {
   width: 100%;
@@ -288,11 +325,13 @@ footer {
 /* Responsive */
 
 
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and (min-width: 427px) and (max-width: 1023px) {
   .container-events {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
 
 @media screen and (max-width: 768px) {
   body {
@@ -301,8 +340,13 @@ footer {
 
   header {
     justify-content: center;
+    height:max-content;
+    margin-bottom: 50px;
   }
 
+  header>img{
+    display:none;
+  }
   .hero-container {
     justify-content: center;
     width: fit-content;
