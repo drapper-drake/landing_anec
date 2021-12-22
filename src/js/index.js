@@ -5,20 +5,26 @@ function createAll() {
     .then((data) => {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
+      changeformatDateJSON(data);
+      data.sort((a,b) => a.dateStart - b.dateStart)
       for (let evento = 0; evento < 6; evento++) {
         createEvent(data[evento], content, evento);
       }
     });
 }
-
+function changeformatDateJSON (dataJSON){
+  for (let index in dataJSON) {
+    dataJSON[index].dateStart = new Date(dataJSON[index].dateStart);
+    if(dataJSON[index].hasOwnProperty("dateFinal")){
+    dataJSON[index].dateFinal = new Date(dataJSON[index].dateFinal);
+    }
+  }
+}
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
 function createEvent(evento, container, position) {
   // Convertir string en número (fecha)
-  const convertDateStart = new Date(evento.dateStart);
-  const convertDateFinal = new Date(evento.dateFinal);
-  // Llamar función que imprime la fecha en el orden deseado
-  const dateStart = dateFormat(convertDateStart);
-  const dateFinal = dateFormat(convertDateFinal);
+  let dateStart = dateFormat(evento.dateStart, true);
+
   const containerCard = document.createElement("div");
   containerCard.className = "container-card";
   container.appendChild(containerCard);
@@ -61,7 +67,14 @@ function createEvent(evento, container, position) {
   infoCard.appendChild(name);
   infoCard.appendChild(place);
   dateCard.appendChild(date);
-
+  if(evento.hasOwnProperty("dateFinal")){
+    let dateF = dateFormat(evento.dateFinal,true );
+    let dateEnd = document.createElement("p");
+    dateEnd.innerText = dateF;
+    let divider = document.createElement("hr");
+    dateCard.appendChild(divider);
+    dateCard.appendChild(dateEnd);
+  }
   // ICONOS
   const IconContainer = document.createElement("figure");
   const Icon = document.createElement("img");
