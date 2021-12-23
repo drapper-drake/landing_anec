@@ -6,24 +6,24 @@ function createAll() {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
       changeformatDateJSON(data);
-      data.sort((a,b) => a.dateStart - b.dateStart)
+      data.sort((a, b) => a.dateStart - b.dateStart);
       for (let evento = 0; evento < 6; evento++) {
         createEvent(data[evento], content, evento);
       }
     });
 }
-function changeformatDateJSON (dataJSON){
-  for (let index in dataJSON) {
+function changeformatDateJSON(dataJSON) {
+  for (const index in dataJSON) {
     dataJSON[index].dateStart = new Date(dataJSON[index].dateStart);
-    if(dataJSON[index].hasOwnProperty("dateFinal")){
-    dataJSON[index].dateFinal = new Date(dataJSON[index].dateFinal);
+    if (dataJSON[index].hasOwnProperty("dateFinal")) {
+      dataJSON[index].dateFinal = new Date(dataJSON[index].dateFinal);
     }
   }
 }
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
 function createEvent(evento, container, position) {
   // Convertir string en número (fecha)
-  let dateStart = dateFormat(evento.dateStart, true);
+  const dateStart = dateFormat(evento.dateStart, true);
 
   const containerCard = document.createElement("div");
   containerCard.className = "container-card";
@@ -67,11 +67,11 @@ function createEvent(evento, container, position) {
   infoCard.appendChild(name);
   infoCard.appendChild(place);
   dateCard.appendChild(date);
-  if(evento.hasOwnProperty("dateFinal")){
-    let dateF = dateFormat(evento.dateFinal,true );
-    let dateEnd = document.createElement("p");
+  if (evento.hasOwnProperty("dateFinal")) {
+    const dateF = dateFormat(evento.dateFinal, true);
+    const dateEnd = document.createElement("p");
     dateEnd.innerText = dateF;
-    let divider = document.createElement("hr");
+    const divider = document.createElement("hr");
     dateCard.appendChild(divider);
     dateCard.appendChild(dateEnd);
   }
@@ -83,7 +83,7 @@ function createEvent(evento, container, position) {
 
   if (evento.free) {
     IconContainer.title = "Evento GRATUITO";
-    Icon.src = "./img/iconos/free.png";
+    Icon.src = "./img/iconos/Gratis.svg";
     Icon.alt = "Evento GRATUITO";
   } else {
     IconContainer.title = "Evento DE PAGO";
@@ -92,17 +92,17 @@ function createEvent(evento, container, position) {
     bar.appendChild(IconContainer);
     IconContainer.appendChild(Icon);
   }
-  if(evento.village) {
-    let ruralIconContainer = document.createElement("figure");
-    let ruralIcon = document.createElement("img");
+  if (evento.village) {
+    const ruralIconContainer = document.createElement("figure");
+    const ruralIcon = document.createElement("img");
     ruralIconContainer.title = "Evento RURAL";
     ruralIcon.src = "./img/iconos/iconoVillage.png";
     ruralIcon.alt = "Evento RURAL";
     bar.appendChild(ruralIconContainer);
     ruralIconContainer.appendChild(ruralIcon);
   } else {
-    let cityIconContainer = document.createElement("figure");
-    let cityIcon = document.createElement("img");
+    const cityIconContainer = document.createElement("figure");
+    const cityIcon = document.createElement("img");
     cityIconContainer.title = "Evento URBANO";
     cityIcon.src = "./img/iconos/iconoCity.png";
     cityIcon.alt = "Evento URBANO";
@@ -110,20 +110,20 @@ function createEvent(evento, container, position) {
     cityIconContainer.appendChild(cityIcon);
   }
   // ICONOS DE CATEGORÍAS
-  for(let cat in evento.category) {
-    switch(evento.category[cat]) {
+  for (const cat in evento.category) {
+    switch (evento.category[cat]) {
       case "Christmas":
-        let xmasIconContainer = document.createElement("figure");
-        let xmasIcon = document.createElement("img");
+        const xmasIconContainer = document.createElement("figure");
+        const xmasIcon = document.createElement("img");
         xmasIconContainer.title = "Evento NAVIDEÑO";
-        xmasIcon.src = "./img/iconos/iconoChristmas.png";
+        xmasIcon.src = "./img/iconos/Navidad.svg";
         xmasIcon.alt = "Evento NAVIDEÑO";
         bar.appendChild(xmasIconContainer);
         xmasIconContainer.appendChild(xmasIcon);
         break;
       case "Kids":
-        let kidsIconContainer = document.createElement("figure");
-        let kidsIcon = document.createElement("img");
+        const kidsIconContainer = document.createElement("figure");
+        const kidsIcon = document.createElement("img");
         kidsIconContainer.title = "Evento INFANTIL";
         kidsIcon.src = "./img/iconos/iconoKids.svg";
         kidsIcon.alt = "Evento INFANTIL";
@@ -131,8 +131,8 @@ function createEvent(evento, container, position) {
         kidsIconContainer.appendChild(kidsIcon);
         break;
       case "Play":
-        let playIconContainer = document.createElement("figure");
-        let playIcon = document.createElement("img");
+        const playIconContainer = document.createElement("figure");
+        const playIcon = document.createElement("img");
         playIconContainer.title = "Evento LÚDICO";
         playIcon.src = "./img/iconos/iconoPlay.svg";
         playIcon.alt = "Evento LÚDICO";
@@ -140,8 +140,8 @@ function createEvent(evento, container, position) {
         playIconContainer.appendChild(playIcon);
         break;
       case "Music":
-        let musicIconContainer = document.createElement("figure");
-        let musicIcon = document.createElement("img");
+        const musicIconContainer = document.createElement("figure");
+        const musicIcon = document.createElement("img");
         musicIconContainer.title = "Evento MUSICAL";
         musicIcon.src = "./img/iconos/iconoMusic.svg";
         musicIcon.alt = "Evento MUSICAL";
@@ -149,8 +149,8 @@ function createEvent(evento, container, position) {
         musicIconContainer.appendChild(musicIcon);
         break;
       case "Sports":
-        let sportIconContainer = document.createElement("figure");
-        let sportIcon = document.createElement("img");
+        const sportIconContainer = document.createElement("figure");
+        const sportIcon = document.createElement("img");
         sportIconContainer.title = "Evento DEPORTIVO";
         sportIcon.src = "./img/iconos/iconoSports.png";
         sportIcon.alt = "Evento DEPORTIVO";
@@ -158,8 +158,8 @@ function createEvent(evento, container, position) {
         sportIconContainer.appendChild(sportIcon);
         break;
       case "Theatre":
-        let theatreIconContainer = document.createElement("figure");
-        let theatreIcon = document.createElement("img");
+        const theatreIconContainer = document.createElement("figure");
+        const theatreIcon = document.createElement("img");
         theatreIconContainer.title = "Evento TEATRAL";
         theatreIcon.src = "./img/iconos/iconoTheatre.svg";
         theatreIcon.alt = "Evento TEATRAL";
@@ -167,8 +167,8 @@ function createEvent(evento, container, position) {
         theatreIconContainer.appendChild(theatreIcon);
         break;
       case "Party":
-        let partyIconContainer = document.createElement("figure");
-        let partyIcon = document.createElement("img");
+        const partyIconContainer = document.createElement("figure");
+        const partyIcon = document.createElement("img");
         partyIconContainer.title = "Evento FESTIVO";
         partyIcon.src = "./img/iconos/iconoParty.svg";
         partyIcon.alt = "Evento FESTIVO";
@@ -176,8 +176,8 @@ function createEvent(evento, container, position) {
         partyIconContainer.appendChild(partyIcon);
         break;
       case "Food":
-        let foodIconContainer = document.createElement("figure");
-        let foodIcon = document.createElement("img");
+        const foodIconContainer = document.createElement("figure");
+        const foodIcon = document.createElement("img");
         foodIconContainer.title = "Evento GASTRONÓMICO";
         foodIcon.src = "./img/iconos/iconoFood.svg";
         foodIcon.alt = "Evento GASTRONÓMICO";
@@ -185,8 +185,8 @@ function createEvent(evento, container, position) {
         foodIconContainer.appendChild(foodIcon);
         break;
       case "Museum":
-        let museumIconContainer = document.createElement("figure");
-        let museumIcon = document.createElement("img");
+        const museumIconContainer = document.createElement("figure");
+        const museumIcon = document.createElement("img");
         museumIconContainer.title = "Evento de MUSEO";
         museumIcon.src = "./img/iconos/iconoMuseum.svg";
         museumIcon.alt = "Evento de MUSEO";
@@ -195,8 +195,8 @@ function createEvent(evento, container, position) {
         break;
       // Pongo el default por si acaso UwU
       default:
-        let defaultIconContainer = document.createElement("figure");
-        let defaultIcon = document.createElement("img");
+        const defaultIconContainer = document.createElement("figure");
+        const defaultIcon = document.createElement("img");
         defaultIconContainer.title = "Evento POR DEFECTO";
         defaultIcon.src = "./img/iconos/xmark-solid.svg";
         defaultIcon.alt = "Evento POR DEFECTO";

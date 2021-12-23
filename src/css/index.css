@@ -274,7 +274,7 @@ hr {
   margin: 10px auto;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -284,12 +284,14 @@ figure {
   width: 50px;
   height: 50px;
 
+  display: flex;
+  align-items: center;
   margin: 0;
 }
 
 figure > img {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 
   margin-left: 10px;
 
