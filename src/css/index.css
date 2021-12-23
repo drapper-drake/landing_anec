@@ -35,7 +35,18 @@ header>img{
   bottom: -75px;
   left: 100px;
 }
+header > p {
+  color: var(--color-links-cta);
+  text-shadow: 4px 0 0 var(--color-contrast-bg-light);
+  font-family: "Lobster Two", cursive;
+  text-align: start;
+  font-size: 54px;
+  font-weight: bold;
+  position:absolute;
+  left:50px;
+  top:-50px;
 
+}
 .hero-container {
   width: 450px;
   padding: 25px;
@@ -222,7 +233,6 @@ main {
 
   position: absolute;
   bottom: 0;
-  /*text-align: center;*/
   color: var(--color-text-bg-dark);
 }
 
@@ -345,12 +355,17 @@ footer {
 
   header {
     justify-content: center;
-    height:max-content;
     margin-bottom: 50px;
   }
 
   header > img{
     display:none;
+  }
+  header > p {
+    width: 100%;
+    left:0;
+    text-align: center;
+    z-index: 2;
   }
   .hero-container {
     margin-right: 0;
