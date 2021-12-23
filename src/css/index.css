@@ -157,7 +157,7 @@ main {
 .gallery-events h3 {
   font-family: "Lobster two", cursive;
   font-size: 40px;
-  color: var(--color-bg-light);
+  color: var(--color-contrast-bg-light);
 }
 
 .gallery-events span {
@@ -272,7 +272,6 @@ hr {
   background: var(--bg-light);
   border-radius: 15px;
   margin: 10px auto;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
