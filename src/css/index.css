@@ -374,6 +374,7 @@ footer {
 
   .gallery-events h3 {
     font-size: 28px;
+    color: var(--bg-dark);
   }
 
   .container-events {
