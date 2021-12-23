@@ -35,7 +35,18 @@ header>img{
   bottom: -75px;
   left: 100px;
 }
+header > p {
+  color: var(--color-links-cta);
+  text-shadow: 4px 0 0 var(--color-contrast-bg-light);
+  font-family: "Lobster Two", cursive;
+  text-align: start;
+  font-size: 54px;
+  font-weight: bold;
+  position:absolute;
+  left:50px;
+  top:-50px;
 
+}
 .hero-container {
   width: 450px;
   padding: 25px;
@@ -157,7 +168,7 @@ main {
 .gallery-events h3 {
   font-family: "Lobster two", cursive;
   font-size: 40px;
-  color: var(--color-bg-light);
+  color: var(--color-contrast-bg-light);
 }
 
 .gallery-events span {
@@ -222,7 +233,6 @@ main {
 
   position: absolute;
   bottom: 0;
-  /*text-align: center;*/
   color: var(--color-text-bg-dark);
 }
 
@@ -272,9 +282,8 @@ hr {
   background: var(--bg-light);
   border-radius: 15px;
   margin: 10px auto;
-
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -284,12 +293,14 @@ figure {
   width: 50px;
   height: 50px;
 
+  display: flex;
+  align-items: center;
   margin: 0;
 }
 
 figure > img {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 
   margin-left: 10px;
 
@@ -344,12 +355,17 @@ footer {
 
   header {
     justify-content: center;
-    height:max-content;
     margin-bottom: 50px;
   }
 
   header > img{
     display:none;
+  }
+  header > p {
+    width: 100%;
+    left:0;
+    text-align: center;
+    z-index: 2;
   }
   .hero-container {
     margin-right: 0;
@@ -372,6 +388,7 @@ footer {
 
   .gallery-events h3 {
     font-size: 28px;
+    color: var(--bg-dark);
   }
 
   .container-events {
