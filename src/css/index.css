@@ -31,53 +31,53 @@ header {
 }
 
 header>img{
-  max-height: 450px;
-  position:absolute;
-  bottom: -75px;
-  left: 100px;
+  /*max-height: 450px;*/
+  /*position:absolute;*/
+  /*bottom: -75px;*/
+  /*left: 100px;*/
 }
 header > p {
-  color: var(--color-links-cta);
-  text-shadow: 4px 0 0 var(--color-contrast-bg-light);
-  font-family: "Lobster Two", cursive;
-  text-align: start;
-  font-size: 54px;
-  font-weight: bold;
-  position:absolute;
-  left:50px;
-  top:-5px;
+  /*color: var(--color-links-cta);*/
+  /*text-shadow: 4px 0 0 var(--color-contrast-bg-light);*/
+  /*font-family: "Lobster Two", cursive;*/
+  /*text-align: start;*/
+  /*font-size: 54px;*/
+  /*font-weight: bold;*/
+  /*position:absolute;*/
+  /*left:50px;*/
+  /*top:-5px;*/
 
 }
 .hero-container {
-  width: 450px;
-  padding: 25px;
-  margin-right: 135px;
-  background: var(--bg-dark-80);
-  border-radius: 25px;
-  text-align: center;
-  color: var(--color-text-bg-dark);
-  z-index: 1;
+  /*width: 450px;*/
+  /*padding: 25px;*/
+  /*margin-right: 135px;*/
+  /*background: var(--bg-dark-80);*/
+  /*border-radius: 25px;*/
+  /*text-align: center;*/
+  /*color: var(--color-text-bg-dark);*/
+  /*z-index: 1;*/
 }
 
 .title-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-text-bg-dark);
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*color: var(--color-text-bg-dark);*/
 }
 
 .title-text h1 {
-  font-family: "Lobster two", cursive;
-  font-style: italic;
+  /*font-family: "Lobster two", cursive;*/
+  /*font-style: italic;*/
 }
 
 .title-text p {
-  font-family: "Be Vietnam Pro", sans-serif;
+  /*font-family: "Be Vietnam Pro", sans-serif;*/
 }
 
 .title-text span {
-  color: var(--color-contrast-bg-dark);
+  /*color: var(--color-contrast-bg-dark);*/
 }
 
 main {
