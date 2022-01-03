@@ -1,34 +1,35 @@
+/* stylelint-disable at-rule-no-unknown */
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --color-primary-60: #023e7379;
   --bg-light: #F2F2F2;
   --bg-dark: #0B3762;
   --bg-dark-80: #0b3662e0;
-  --color-text-bg-light: #342618; /* Usado en texto (p) de card-one y sombra de cta */
+  --color-text-bg-light: #342618;
   --color-text-bg-dark: #FFFFFF;
   --color-contrast-bg-light: #0B4DA5;
-  --color-contrast-bg-dark: #FFA438; /* No usado aún */
+  --color-contrast-bg-dark: #FFA438;
   --color-links-cta: #FFA438;
-  --color-links-visited: #8197BA; /* No usado aún */
-}
-
-body {
-  margin: auto 0;
-  background: var(--bg-light);
+  --color-links-visited: #8197BA;
 }
 
 header {
-  height: 450px;
-  margin-bottom: 150px;
-  background: url("../assets/img/Fondo-estampado.png");
-  background-size: contain;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  position:relative;
+  /*height: 450px;*/
+  /*margin-bottom: 150px;*/
+  /* background: url("../assets/img/Fondo-estampado.png"); */
+  /* background-size: contain; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: flex-end; */
+  /* align-items: center; */
+  /* position:relative; */
 }
+
 header>img{
   max-height: 450px;
   position:absolute;
@@ -44,7 +45,7 @@ header > p {
   font-weight: bold;
   position:absolute;
   left:50px;
-  top:-50px;
+  top:-5px;
 
 }
 .hero-container {
