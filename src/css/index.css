@@ -6,46 +6,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary-60: #023e7379;
-  --bg-light: #F2F2F2;
-  --bg-dark: #0B3762;
-  --bg-dark-80: #0b3662e0;
-  --color-text-bg-light: #342618;
-  --color-text-bg-dark: #FFFFFF;
-  --color-contrast-bg-light: #0B4DA5;
-  --color-contrast-bg-dark: #FFA438;
-  --color-links-cta: #FFA438;
-  --color-links-visited: #8197BA;
-}
 
 
 .btn-cta {
   box-shadow: 0 4px 8px 2px var(--bg-dark-80);
 }
-
-.cta-custom-events {
-  width: 80%;
-  background: red;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em auto;
-  color: var(--bg-dark);
-}
-
-.cta-custom-events h4 {
-  font-family: "Lobster two", cursive;
-  /* font-size: 32px; */
-  color: red;
-}
-
-.cta-custom-events p {
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 24px;
-  color: red;
-}
-
 
 @layer components {
   .container-events {
@@ -68,109 +33,84 @@
   .card {
    @apply w-full h-72 bg-dark rounded-b-3xl rounded-l-3xl flex flex-row absolute bottom-0 text-bg-dark;
   }
-}
 
-
-.info-card {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  padding: 0px 15px;
-}
-
-.info-card > h4 {
-  margin: 0;
-  height: 50%;
-  font-family: "Lobster two", cursive;
-  font-size: 2em;
-}
-
-.info-card > p {
-  margin: 0;
-
-  font-size: 1.5em;
-}
-
-.date-card{
-  width: 25%;
-  color: var(--color-text-bg-light);
-  background: var(--bg-light);
-  border-radius: 0 0 25px 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: bold;
-  text-align: center;
-}
-
-hr {
-  width: 75%;
-  border: none;
-  border-top: 1px solid var(--color-text-bg-light);
-}
-
-.icons-bar {
-  width: 100%;
-  background: var(--bg-light);
-  border-radius: 15px;
-  margin: 10px auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-figure {
-  width: 50px;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-figure > img {
-  width: 40px;
-  height: 40px;
-
-  margin-left: 10px;
-
-}
-
-
-
-.container-img > img {
-  max-height: 50px;
-}
-
-/* Responsive */
-
-
-@media screen and (min-width: 427px) and (max-width: 1023px) {
-  .container-events {
-    grid-template-columns: 1fr 1fr;
+  .info-card {
+    @apply flex flex-col w-9/12 py-0 px-4;
   }
+
+  .info-card > h4 {
+    @apply m-0 h-1/2 font-serif text-xl;
+    
+  }
+
+  .info-card > p {
+    @apply m-0 text-2xl;
+  }
+
+  .date-card{
+   @apply w-1/4 text-bg-light bg-light rounded-br-3xl flex flex-col justify-center items-center font-bold text-center;  
+  }
+
+  hr {
+    @apply w-3/4 border-none border border-solid border-bg-light ;
+  }
+
+  .icons-bar {
+    @apply w-full bg-light rounded-3xl my-2.5 mx-auto flex justify-evenly items-center flex-row flex-wrap;
+  }
+
+  figure {
+    @apply w-12 h-12 flex items-center m-0;
+  }
+
+  figure > img {
+    @apply w-10 h-10 ml-2.5;
+  }
+
+  .container-img > img {
+    @apply max-h-12;
+  }
+
 }
 
+/*¡¡¡Comprobar si existe!!!
+
+
+.btn-cta {
+  box-shadow: 0 4px 8px 2px var(--bg-dark-80);
+}
+
+.cta-custom-events {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em auto;
+  color: var(--bg-dark);
+}
+
+.cta-custom-events h4 {
+  font-family: "Lobster two", cursive;
+  font-size: 32px; 
+}
+
+.cta-custom-events p {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 24px;
+}*/
+
+/*Responsive*/
 
 
 @media screen and (max-width: 768px) {
-  
+  /* ¡¡¡Comprobar si existe!!!
 
-
-  
- 
-
-  .title-text {
+   .title-text {
     width: 300px;
     height: 280px;
     overflow: hidden;
   }
-
+  
   .container-gallery-card {
     width: 80vw;
     flex-direction: column;
@@ -181,13 +121,5 @@ figure > img {
   .gallery-events h3 {
     font-size: 28px;
     color: var(--bg-dark);
-  }
-
-  .container-events {
-    grid-template-columns: 1fr;
-  }
-
-  .container-img {
-    width: 300px;
-  }
+  }*/
 }
