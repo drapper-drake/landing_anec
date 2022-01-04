@@ -67,10 +67,6 @@
     @apply w-10 h-10 ml-2.5;
   }
 
-  .container-img > img {
-    @apply max-h-12;
-  }
-
 }
 
 /*¡¡¡Comprobar si existe!!!
