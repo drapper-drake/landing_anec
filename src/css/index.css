@@ -21,28 +21,12 @@
 
 
 .btn-cta {
-  /* padding: 14px 36px; */
-  border: 3px solid var(--color-links-cta);
-  border-radius: 15px;
-  background-color: var(--color-links-cta);
-  color: var(--bg-dark);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
   box-shadow: 0 4px 8px 2px var(--bg-dark-80);
-  transition: 800ms;
-}
-
-.btn-cta:hover {
-  background-color: var(--bg-light);
-  border-color: var(--color-contrast-bg-light);
-  color: var(--color-contrast-bg-light);
 }
 
 .cta-custom-events {
   width: 80%;
+  background: red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -52,32 +36,15 @@
 
 .cta-custom-events h4 {
   font-family: "Lobster two", cursive;
-  font-size: 32px;
+  /* font-size: 32px; */
+  color: red;
 }
 
 .cta-custom-events p {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 24px;
+  color: red;
 }
-
-.gallery-events {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery-events h3 {
-  font-family: "Lobster two", cursive;
-  font-size: 40px;
-  color: var(--color-contrast-bg-light);
-}
-
-.gallery-events span {
-  color: var(--color-contrast-bg-dark);
-}
-
-/* Estilos de las tarjetas de eventos */
 
 
 @layer components {
@@ -88,7 +55,6 @@
   .container-card {
     @apply w-4/5 pb-60 mx-auto my-8 rounded-3xl flex place-content-center flex-col relative text-base; /*? Revisar porque es 91% por si falla responsive, y la tarjeta queda fina */
     box-shadow: 0px 10px 12px 4px #00000050;
-    /* width: 90%; */
   }
 
   .photoEvent {
@@ -101,9 +67,6 @@
 
   .card {
    @apply w-full h-72 bg-dark rounded-b-3xl rounded-l-3xl flex flex-row absolute bottom-0 text-bg-dark;
-    transition: 2s;     /*IMPROVE revisar si esto es por algo o por el hover antiguo*/
-
-
   }
 }
 
@@ -178,37 +141,12 @@ figure > img {
 
 }
 
-/* Footer */
-footer {
-  width: 100%;
-  min-height: 200px;
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
 
-.container-img {
-  width: 80%;
-  /*No le pongo variable porque depende de los logos*/
-  background: #FFFFFF;
-  border-radius: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
 
 .container-img > img {
   max-height: 50px;
 }
-.hidden{
-  display:none;
-}
+
 /* Responsive */
 
 
