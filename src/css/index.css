@@ -40,7 +40,7 @@
 
   .info-card > h4 {
     @apply m-0 h-1/2 font-serif text-xl;
-    
+
   }
 
   .info-card > p {
@@ -48,7 +48,7 @@
   }
 
   .date-card{
-   @apply w-1/4 text-bg-light bg-light rounded-br-3xl flex flex-col justify-center items-center font-bold text-center;  
+   @apply w-1/4 text-bg-light bg-light rounded-br-3xl flex flex-col justify-center items-center font-bold text-center;
   }
 
   hr {
@@ -91,7 +91,7 @@
 
 .cta-custom-events h4 {
   font-family: "Lobster two", cursive;
-  font-size: 32px; 
+  font-size: 32px;
 }
 
 .cta-custom-events p {
@@ -110,7 +110,7 @@
     height: 280px;
     overflow: hidden;
   }
-  
+
   .container-gallery-card {
     width: 80vw;
     flex-direction: column;
@@ -118,8 +118,5 @@
     align-items: center;
   }
 
-  .gallery-events h3 {
-    font-size: 28px;
-    color: var(--bg-dark);
-  }*/
+  */
 }
