@@ -1,5 +1,6 @@
 /* stylelint-disable at-rule-no-unknown */
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -18,109 +19,9 @@
   --color-links-visited: #8197BA;
 }
 
-header {
-  /*height: 450px;*/
-  /*margin-bottom: 150px;*/
-  /* background: url("../assets/img/Fondo-estampado.png"); */
-  /* background-size: contain; */
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: flex-end; */
-  /* align-items: center; */
-  /* position:relative; */
-}
-
-header>img{
-  /*max-height: 450px;*/
-  /*position:absolute;*/
-  /*bottom: -75px;*/
-  /*left: 100px;*/
-}
-header > p {
-  /*color: var(--color-links-cta);*/
-  /*text-shadow: 4px 0 0 var(--color-contrast-bg-light);*/
-  /*font-family: "Lobster Two", cursive;*/
-  /*text-align: start;*/
-  /*font-size: 54px;*/
-  /*font-weight: bold;*/
-  /*position:absolute;*/
-  /*left:50px;*/
-  /*top:-5px;*/
-
-}
-.hero-container {
-  /*width: 450px;*/
-  /*padding: 25px;*/
-  /*margin-right: 135px;*/
-  /*background: var(--bg-dark-80);*/
-  /*border-radius: 25px;*/
-  /*text-align: center;*/
-  /*color: var(--color-text-bg-dark);*/
-  /*z-index: 1;*/
-}
-
-.title-text {
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*color: var(--color-text-bg-dark);*/
-}
-
-.title-text h1 {
-  /*font-family: "Lobster two", cursive;*/
-  /*font-style: italic;*/
-}
-
-.title-text p {
-  /*font-family: "Be Vietnam Pro", sans-serif;*/
-}
-
-.title-text span {
-  /*color: var(--color-contrast-bg-dark);*/
-}
-
-main {
-  width: 90%;
-  margin: 32px  auto;
-}
-
-.container-gallery-card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.container-gallery-card .card-one {
-  width: 300px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-one>img{
-  height: 150px;
-}
-
-.card-one h2 {
-  color: var(--color-contrast-bg-light);
-  font-family: "Lobster two", cursive;
-  text-align: center;
-}
-
-.card-one p {
-  color: var(--color-text-bg-light);
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: bold;
-  text-align: center;
-}
 
 .btn-cta {
-  padding: 14px 36px;
+  /* padding: 14px 36px; */
   border: 3px solid var(--color-links-cta);
   border-radius: 15px;
   background-color: var(--color-links-cta);
@@ -320,29 +221,11 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-  }
+  
 
-  header {
-    justify-content: center;
-    margin-bottom: 50px;
-  }
 
-  header > img{
-    display:none;
-  }
-  header > p {
-    width: 100%;
-    left:0;
-    text-align: center;
-    z-index: 2;
-  }
-  .hero-container {
-    margin-right: 0;
-    justify-content: center;
-    width: fit-content;
-  }
+  
+ 
 
   .title-text {
     width: 300px;
