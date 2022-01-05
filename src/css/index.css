@@ -69,50 +69,7 @@
 
 }
 
-/*¡¡¡Comprobar si existe!!!
-
-
-.btn-cta {
-  box-shadow: 0 4px 8px 2px var(--bg-dark-80);
-}
-
-.cta-custom-events {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em auto;
-  color: var(--bg-dark);
-}
-
-.cta-custom-events h4 {
-  font-family: "Lobster two", cursive;
-  font-size: 32px;
-}
-
-.cta-custom-events p {
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 24px;
-}*/
-
 /*Responsive*/
 
 
-@media screen and (max-width: 768px) {
-  /* ¡¡¡Comprobar si existe!!!
-
-   .title-text {
-    width: 300px;
-    height: 280px;
-    overflow: hidden;
-  }
-
-  .container-gallery-card {
-    width: 80vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  */
-}
+@media screen and (max-width: 768px)
