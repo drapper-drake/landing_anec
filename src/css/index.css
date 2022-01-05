@@ -1,75 +1,72 @@
 /* stylelint-disable at-rule-no-unknown */
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 .btn-cta {
-  box-shadow: 0 4px 8px 2px var(--bg-dark-80);
+  box-shadow: 0 4px 8px 2px #0b3662e0;
+}
+
+p.logo {
+  text-shadow: 4px 0 0 #0b4da5;
 }
 
 @layer components {
   .container-events {
-    @apply h-min grid grid-cols-3 gap-4 font-sans text-lg;
+    @apply h-min py-12 gap-4 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+    /* @apply h-min grid grid-cols-3 gap-4 font-sans text-lg; */
   }
-
   .container-card {
-    @apply w-4/5 pb-60 mx-auto my-8 rounded-3xl flex place-content-center flex-col relative text-base; /*? Revisar porque es 91% por si falla responsive, y la tarjeta queda fina */
+    @apply rounded-2xl text-base cursor-pointer font-sans;
     box-shadow: 0px 10px 12px 4px #00000050;
   }
-
   .photoEvent {
-    @apply w-full h-80 bg-light rounded-3xl;
+    @apply w-full h-40 relative;
   }
-
   .photoEvent > img {
-   @apply w-full h-full object-cover rounded-2xl;
-  }
-
-  .card {
-   @apply w-full h-72 bg-dark rounded-b-3xl rounded-l-3xl flex flex-row absolute bottom-0 text-bg-dark;
+    @apply w-full h-full object-cover rounded-tl-2xl rounded-tr-2xl;
   }
 
   .info-card {
-    @apply flex flex-col w-9/12 py-0 px-4;
+    @apply w-full h-72 flex flex-col justify-evenly px-4;
   }
 
-  .info-card > h4 {
-    @apply m-0 h-1/2 font-serif text-xl;
-
+  .info-card h3 {
+    @apply h-2/6 text-xl font-serif;
   }
 
-  .info-card > p {
-    @apply m-0 text-2xl;
-  }
-
-  .date-card{
-   @apply w-1/4 text-bg-light bg-light rounded-br-3xl flex flex-col justify-center items-center font-bold text-center;
-  }
-
-  hr {
-    @apply w-3/4 border-none border border-solid border-bg-light ;
+  .info-card p {
+    @apply text-base;
   }
 
   .icons-bar {
-    @apply w-full bg-light rounded-3xl my-2.5 mx-auto flex justify-evenly items-center flex-row flex-wrap;
+    @apply w-full py-2.5 bg-light rounded-[80px] flex flex-row flex-wrap justify-evenly;
+    box-shadow: 0px 2px 4px #00000050;
   }
-
-  figure {
-    @apply w-12 h-12 flex items-center m-0;
+  .icons-bar > div {
+    @apply flex flex-col items-center;
   }
-
-  figure > img {
-    @apply w-10 h-10 ml-2.5;
+  .icons-bar > div > img {
+    @apply w-6 h-6;
   }
-
+  .bookmark {
+    @apply w-12 h-12 flex justify-center items-end absolute top-0 left-0;
+  }
+  .tooltip {
+    @apply w-12 h-12 flex justify-center items-end absolute top-0 right-0;
+  }
+  .tooltip .tooltip-text {
+    @apply hidden w-24 bg-black text-white text-center rounded-md px-1 py-1 absolute z-[1] bottom-full left-1/2 -translate-x-1/2;
+  }
+  .tooltip:hover .tooltip-text {
+    @apply block opacity-100;
+  }
+  .tooltip .tooltip-text::after {
+    @apply absolute top-full left-1/2 -ml-1 border-[5px] border-solid;
+    content: " ";
+    border-color: black transparent transparent transparent;
+  }
 }
-
-/*Responsive*/
-
-
-@media screen and (max-width: 768px)
