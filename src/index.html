@@ -9,75 +9,75 @@
     <link rel="stylesheet" href="./css/index.css" />
     <script type="module" src="./js/index.js"></script>
   </head>
-  <body>
-    <header>
-      <p>Ànec Events</p>
-      <img src="./assets/img/Pato-sentado.png" alt="Pato disfrazado de reno mirando un portátil.">
-      <div class="hero-container">
-        <div class="title-text">
-          <h1>¿Buscas qué hacer hoy en <span>Alicante</span>?</h1>
-          <p>
+  <body class="">
+    <header class="h-[450px] bg-[url('../assets/img/Fondo-estampado.png')] mb-36 bg-contain flex flex-row justify-center md:justify-end items-center relative">
+      <p class="text-links-cta w-full text-center left-0 z-30 top-0 md:max-w-max md:left-10 md:text-left text-shadow-[4px 0 0 (bg-contrast-bg-light)] font-lobster content-start text-[54px] font-bold absolute">Ànec Events</p>
+      <img class="max-h-[450px] z-10 absolute left-8 inset-y-20 -mb-75px ml-100px" src="./assets/img/Pato-sentado.png" alt="Pato disfrazado de reno mirando un portátil.">
+      <div class="hero-container z-20 w-[500px] p-[25px] md:mr-32 bg-bg-dark-80 rounded-[25px] text-center text-contrast-bg-dark">
+        <div class="title-text flex flex-col justify-center items-center text-white">
+          <h1 class="font-serif md:flex-center font-bold text-2xl p-5 text-center">¿Buscas qué hacer hoy en <span class="text-contrast-bg-dark">Alicante</span>?</h1>
+          <p class="font-sans p-5 text-center">
             Aquí encontrarás propuestas de todo tipo y siempre descubrirás algún plan que se ajuste a lo que
             más te apetezca en ese momento. <br />
             No esperes más y descubre un sinfín de eventos diversos en la provincia de Alicante.
           </p>
         </div>
-        <button class="btn-cta"  data-message="Empezar a buscar eventos">Empezar</button>
+        <button class="btn-cta py-3 px-8 border-4 border-solid border-links-cta rounded-2xl bg-links-cta shadow-[0 4px 8px 2px] shadow-bg-dark-80 text-dark font-sans text-lg font-bold text-center cursor-pointer duration-700 hover:bg-light hover:border-contrast-bg-light hover:text-contrast-bg-light"  data-message="Empezar a buscar eventos">Empezar</button>
       </div>
     </header>
-    <main>
-      <div class="container-gallery-card">
-        <div class="card-one">
-          <img src="./assets/img/Calend.png" />
-          <h2>No te pierdas nada</h2>
-          <p>
+    <main class="w-11/12 my-8 mx-auto">
+      <div class="container-gallery-card flex flex-row flex-wrap justify-around items-center">
+        <div class="card-one w-72 min-h-72 flex flex-col justify-center items-center">
+          <img class= "h-40" src="./assets/img/Calend.png" />
+          <h2 class="text-contrast-bg-light font-serif font-bold text-center py-5 text-lg">No te pierdas nada</h2>
+          <p class="text-bg-light font-sans font-bold text-center">
             ¿Te has quedado sin plan? ¡No te preocupes! Aquí encontrarás muchísimos planes para
             que los disfrutes.
             Tienes multitud de eventos a un click de distancia.
           </p>
         </div>
-        <div class="card-one">
-          <img src="./assets/img/ticket.png" />
-          <h2>Encuentra la información más actualizada</h2>
-          <p>Consulta la información de todo tipo de acontecimientos y sus características para decidir
+        <div class="card-one w-72 min-h-72 flex flex-col justify-center items-center">
+          <img class= "h-40" src="./assets/img/ticket.png" />
+          <h2 class="text-contrast-bg-light font-serif font-bold text-center py- text-lg">Encuentra la información más actualizada</h2>
+          <p class="text-bg-light font-sans font-bold text-center">Consulta la información de todo tipo de acontecimientos y sus características para decidir
             cuál será el próximo evento al que asistas.</p>
         </div>
-        <div class="card-one">
-          <img src="./assets/img/Movil.png" />
-          <h2>Todos los eventos de tu provincia juntos</h2>
-          <p>Se celebran eventos sobre prácticamente cualquier tema que se te ocurra,
+        <div class="card-one w-72 min-h-72 flex flex-col justify-center items-center text-lg">
+          <img class= "h-40" src="./assets/img/Movil.png" />
+          <h2 class="text-contrast-bg-light font-serif font-bold text-center py-5">Todos los eventos de tu provincia juntos</h2>
+          <p class="text-bg-light font-sans font-bold text-center">Se celebran eventos sobre prácticamente cualquier tema que se te ocurra,
             desde arte y fotografía hasta yoga y senderismo. Entra y descubre todas
             las posibilidades.</p>
         </div>
       </div>
-      <div class="gallery-events">
-        <h3>Próximos eventos en <span>Alicante</span></h3>
-        <div class="container-events"></div>
-        <button class="btn-cta">Empezar</button>
+      <div class="gallery-events flex flex-col justify-center items-center py-5">
+        <h3 class="font-serif font-extrabold text-3xl text-contrast-bg-light py-5">Próximos eventos en <span class="text-contrast-bg-dark">Alicante</span></h3>
+        <div class="container-events grid-cols-1 md:grid-cols-2 xl:grid-cols-3"></div>
+        <button class="btn-cta py-3 px-8 border-4 border-solid border-links-cta rounded-2xl bg-links-cta shadow-[0 4px 8px 2px] shadow-bg-dark-80 text-dark font-sans text-lg font-bold text-center cursor-pointer duration-700 hover:bg-light hover:border-contrast-bg-light hover:text-contrast-bg-light">Empezar</button>
       </div>
     </main>
-    <footer>
-      <div class="container-developers">
-        <p>Desarrollado por Dapper Drake</p>
-        <p>
+    <footer class="w-full min-h-[200px] bg-dark text-bg-dark font-sans text-lg text-center flex flex-col justify-around">
+      <div class="container-developers ">
+        <p class="py-5">Desarrollado por Dapper Drake</p>
+        <p class="mx-10 xl:m-0">
           Somos alumnos de la EOI, hemos desarrollado esta web para facilitar la
           búsqueda de eventos y fomentar el ocio en Alicante
         </p>
       </div>
       <div class="container-partners">
-        <h5>Patrocinadores:</h5>
-        <div class="container-img">
-          <img src="./assets/img/gobesp.png" alt="Logo Gobierno de España" />
-          <img
+        <h5 class="py-5">Patrocinadores:</h5>
+        <div class="container-img w-4/5 bg-bg-dark rounded-2xl flex flex-wrap justify-evenly my-0 mx-auto mb-2.5">
+          <img class="max-h-12 px-1" src="./assets/img/gobesp.png" alt="Logo Gobierno de España" />
+          <img class="max-h-12 px-1"
             src="./assets/img/logoEoi.svg"
             alt="Logo Escuela de Organización Industrial"
           />
-          <img
+          <img class="max-h-12 px-1"
             src="./assets/img/ue.png"
             alt="Logo Unión Europea, Fondo Social Europeo. Iniciativa de Empleo Juvenil."
           />
-          <img src="./assets/img/fundonce.png" alt="Logo Fundación Once" />
-          <img
+          <img class="max-h-12 px-1" src="./assets/img/fundonce.png" alt="Logo Fundación Once" />
+          <img class="max-h-12 px-1"
             src="./assets/img/garjuv.png"
             alt="Sistema Nacional de Garantía Juvenil"
           />
