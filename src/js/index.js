@@ -1,222 +1,253 @@
+let allEvents = [];
 function createAll() {
   // se importa el json, se parsea y almacena en data
-  fetch("./data/eventosNavidad.json")
+  fetch("./data/eventosAlicante.json")
     .then((response) => response.json())
     .then((data) => {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
-      changeformatDateJSON(data);
-      data.sort((a, b) => a.dateStart - b.dateStart);
-      for (let evento = 0; evento < 6; evento++) {
-        createEvent(data[evento], content, evento);
+      for (let evento in data) {
+        let idEvent = data[evento].nameEvent;
+        idEvent = idEvent
+          .toLowerCase()
+          .replace(/ /g, "-")
+          .replace(/[^\w-]+/g, "");
+        data[evento].id = idEvent;
+        allEvents.push(data[evento]);
       }
+      changeformatDateJSON();
+      allEvents.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
+
+      createEvent(content, responsiveNumberOfEvents(allEvents));
     });
 }
-function changeformatDateJSON(dataJSON) {
-  for (const index in dataJSON) {
-    dataJSON[index].dateStart = new Date(dataJSON[index].dateStart);
-    if (dataJSON[index].hasOwnProperty("dateFinal")) {
-      dataJSON[index].dateFinal = new Date(dataJSON[index].dateFinal);
+function responsiveNumberOfEvents(list) {
+  let numberOfEvents = 8;
+  if (window.innerWidth <= 1280) {
+    numberOfEvents = 6;
+  }
+  if (numberOfEvents > list.length) {
+    numberOfEvents = list.length;
+  }
+  return list.slice(0, numberOfEvents);
+}
+function changeformatDateJSON() {
+  for (const index in allEvents) {
+    allEvents[index].dateStart = new Date(allEvents[index].dateStart);
+    if (allEvents[index].hasOwnProperty("dateFinal")) {
+      allEvents[index].dateFinal = new Date(allEvents[index].dateFinal);
     }
   }
 }
+
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
-function createEvent(evento, container, position) {
-  // Convertir string en número (fecha)
-  const dateStart = dateFormat(evento.dateStart, true);
+function createEvent(container, listEvents) {
+  for (let position in listEvents) {
+    //Llamar función que imprime la fecha en el orden deseado
+    let dateStart = dateFormat(listEvents[position].dateStart, true);
+    let containerCard = document.createElement("div");
+    containerCard.className = "container-card";
+    containerCard.dataset.id = listEvents[position].id;
+    //DIV DE LA IMAGEN
+    let photoEvent = document.createElement("div");
+    photoEvent.className = "photoEvent";
+    //IMAGEN
+    let image = document.createElement("img");
+    image.src = listEvents[position].photoEvent;
+    //DATOS TARJETA
+    let infoCard = document.createElement("div");
+    infoCard.className = "info-card";
+    // NOMBRE
+    let name = document.createElement("h3");
+    name.innerText = listEvents[position].nameEvent;
+    // LUGAR
+    let place = document.createElement("p");
+    place.innerText = listEvents[position].cityLocation;
+    // BARRA DE ICONOS
+    let bar = document.createElement("div");
+    bar.className = "icons-bar";
+    // FECHA
+    let date = document.createElement("p");
+    date.innerText = `Solo el ${dateStart}`;
+    if (listEvents[position].hasOwnProperty("dateFinal")) {
+      let dateF = dateFormat(listEvents[position].dateFinal, true);
+      let resultado = allYear(dateStart, dateF);
+      if (!resultado) {
+        date.innerText = `Del ${dateStart}  al ${dateF}`;
+      } else {
+        date.innerText = `Todo el año`;
+      }
+    }
 
-  const containerCard = document.createElement("div");
-  containerCard.className = "container-card";
-  container.appendChild(containerCard);
-  // DIV DE LA IMAGEN
-  const photoEvent = document.createElement("div");
-  photoEvent.className = "photoEvent";
-  // IMAGEN
-  const image = document.createElement("img");
-  image.src = evento.photoEvent;
-  image.className = "cta";
-  // TARJETA
-  const card = document.createElement("div");
-  card.className = "card";
-  // DATOS TARJETA
-  const infoCard = document.createElement("div");
-  infoCard.className = "info-card";
-  // NOMBRE
-  const name = document.createElement("h4");
-  name.innerText = evento.nameEvent;
-  // LUGAR
-  const place = document.createElement("p");
-  place.innerText = evento.cityLocation;
-  // BARRA DE ICONOS
-  const bar = document.createElement("div");
-  bar.className = "icons-bar";
-  // DIV FECHA
-  const dateCard = document.createElement("div");
-  dateCard.className = "date-card";
-  // FECHA
-  const date = document.createElement("p");
-  date.innerText = dateStart;
+    container.appendChild(containerCard);
+    containerCard.appendChild(photoEvent);
+    photoEvent.appendChild(image);
+    containerCard.appendChild(infoCard);
+    infoCard.appendChild(name);
+    infoCard.appendChild(place);
+    infoCard.appendChild(date);
+    infoCard.appendChild(bar);
 
-  container.appendChild(containerCard);
-  containerCard.appendChild(photoEvent);
-  photoEvent.appendChild(image);
-  containerCard.appendChild(card);
-  card.appendChild(infoCard);
-  card.appendChild(dateCard);
-  infoCard.appendChild(bar);
-  infoCard.appendChild(name);
-  infoCard.appendChild(place);
-  dateCard.appendChild(date);
-  if (evento.hasOwnProperty("dateFinal")) {
-    const dateF = dateFormat(evento.dateFinal, true);
-    const dateEnd = document.createElement("p");
-    dateEnd.innerText = dateF;
-    const divider = document.createElement("hr");
-    dateCard.appendChild(divider);
-    dateCard.appendChild(dateEnd);
-  }
-  // ICONOS
-  const IconContainer = document.createElement("figure");
-  const Icon = document.createElement("img");
-  bar.appendChild(IconContainer);
-  IconContainer.appendChild(Icon);
+    // ICONO GRATUITO / DE PAGO
+    let freeIconContainer = document.createElement("div");
+    freeIconContainer.className = "tooltip";
+    let freeIcon = document.createElement("img");
+    let freeIconText = document.createElement("span");
+    freeIconText.className = "tooltip-text";
+    photoEvent.appendChild(freeIconContainer);
+    freeIconContainer.appendChild(freeIcon);
+    freeIconContainer.appendChild(freeIconText);
 
-  if (evento.free) {
-    IconContainer.title = "Evento GRATUITO";
-    Icon.src = "./img/iconos/Gratis.svg";
-    Icon.alt = "Evento GRATUITO";
-  } else {
-    IconContainer.title = "Evento DE PAGO";
-    Icon.src = "./img/iconos/pago.svg";
-    Icon.alt = "Evento DE PAGO";
-    bar.appendChild(IconContainer);
-    IconContainer.appendChild(Icon);
-  }
-  if (evento.village) {
-    const ruralIconContainer = document.createElement("figure");
-    const ruralIcon = document.createElement("img");
-    ruralIconContainer.title = "Evento RURAL";
-    ruralIcon.src = "./img/iconos/iconoVillage.png";
-    ruralIcon.alt = "Evento RURAL";
-    bar.appendChild(ruralIconContainer);
-    ruralIconContainer.appendChild(ruralIcon);
-  } else {
-    const cityIconContainer = document.createElement("figure");
-    const cityIcon = document.createElement("img");
-    cityIconContainer.title = "Evento URBANO";
-    cityIcon.src = "./img/iconos/iconoCity.png";
-    cityIcon.alt = "Evento URBANO";
-    bar.appendChild(cityIconContainer);
-    cityIconContainer.appendChild(cityIcon);
-  }
-  // ICONOS DE CATEGORÍAS
-  for (const cat in evento.category) {
-    switch (evento.category[cat]) {
-      case "Christmas":
-        const xmasIconContainer = document.createElement("figure");
-        const xmasIcon = document.createElement("img");
-        xmasIconContainer.title = "Evento NAVIDEÑO";
-        xmasIcon.src = "./img/iconos/Navidad.svg";
-        xmasIcon.alt = "Evento NAVIDEÑO";
-        bar.appendChild(xmasIconContainer);
-        xmasIconContainer.appendChild(xmasIcon);
-        break;
-      case "Kids":
-        const kidsIconContainer = document.createElement("figure");
-        const kidsIcon = document.createElement("img");
-        kidsIconContainer.title = "Evento INFANTIL";
-        kidsIcon.src = "./img/iconos/iconoKids.svg";
-        kidsIcon.alt = "Evento INFANTIL";
-        bar.appendChild(kidsIconContainer);
-        kidsIconContainer.appendChild(kidsIcon);
-        break;
-      case "Play":
-        const playIconContainer = document.createElement("figure");
-        const playIcon = document.createElement("img");
-        playIconContainer.title = "Evento LÚDICO";
-        playIcon.src = "./img/iconos/iconoPlay.svg";
-        playIcon.alt = "Evento LÚDICO";
-        bar.appendChild(playIconContainer);
-        playIconContainer.appendChild(playIcon);
-        break;
-      case "Music":
-        const musicIconContainer = document.createElement("figure");
-        const musicIcon = document.createElement("img");
-        musicIconContainer.title = "Evento MUSICAL";
-        musicIcon.src = "./img/iconos/iconoMusic.svg";
-        musicIcon.alt = "Evento MUSICAL";
-        bar.appendChild(musicIconContainer);
-        musicIconContainer.appendChild(musicIcon);
-        break;
-      case "Sports":
-        const sportIconContainer = document.createElement("figure");
-        const sportIcon = document.createElement("img");
-        sportIconContainer.title = "Evento DEPORTIVO";
-        sportIcon.src = "./img/iconos/iconoSports.png";
-        sportIcon.alt = "Evento DEPORTIVO";
-        bar.appendChild(sportIconContainer);
-        sportIconContainer.appendChild(sportIcon);
-        break;
-      case "Theatre":
-        const theatreIconContainer = document.createElement("figure");
-        const theatreIcon = document.createElement("img");
-        theatreIconContainer.title = "Evento TEATRAL";
-        theatreIcon.src = "./img/iconos/iconoTheatre.svg";
-        theatreIcon.alt = "Evento TEATRAL";
-        bar.appendChild(theatreIconContainer);
-        theatreIconContainer.appendChild(theatreIcon);
-        break;
-      case "Party":
-        const partyIconContainer = document.createElement("figure");
-        const partyIcon = document.createElement("img");
-        partyIconContainer.title = "Evento FESTIVO";
-        partyIcon.src = "./img/iconos/iconoParty.svg";
-        partyIcon.alt = "Evento FESTIVO";
-        bar.appendChild(partyIconContainer);
-        partyIconContainer.appendChild(partyIcon);
-        break;
-      case "Food":
-        const foodIconContainer = document.createElement("figure");
-        const foodIcon = document.createElement("img");
-        foodIconContainer.title = "Evento GASTRONÓMICO";
-        foodIcon.src = "./img/iconos/iconoFood.svg";
-        foodIcon.alt = "Evento GASTRONÓMICO";
-        bar.appendChild(foodIconContainer);
-        foodIconContainer.appendChild(foodIcon);
-        break;
-      case "Museum":
-        const museumIconContainer = document.createElement("figure");
-        const museumIcon = document.createElement("img");
-        museumIconContainer.title = "Evento de MUSEO";
-        museumIcon.src = "./img/iconos/iconoMuseum.svg";
-        museumIcon.alt = "Evento de MUSEO";
-        bar.appendChild(museumIconContainer);
-        museumIconContainer.appendChild(museumIcon);
-        break;
-      // Pongo el default por si acaso UwU
-      default:
-        const defaultIconContainer = document.createElement("figure");
-        const defaultIcon = document.createElement("img");
-        defaultIconContainer.title = "Evento POR DEFECTO";
-        defaultIcon.src = "./img/iconos/xmark-solid.svg";
-        defaultIcon.alt = "Evento POR DEFECTO";
-        bar.appendChild(defaultIconContainer);
-        defaultIconContainer.appendChild(defaultIcon);
-        break;
+    if (listEvents[position].free) {
+      freeIconText.textContent = "Evento GRATUITO";
+      freeIcon.src = "./img/icons/gratis.svg";
+      freeIcon.alt = "Evento GRATUITO";
+    } else {
+      freeIconText.textContent = "Evento de PAGO";
+      freeIcon.src = "./img/icons/Pago-euro.svg";
+      freeIcon.alt = "Evento de PAGO";
+    }
+    // ICONO BENÉFICO
+    if (listEvents[position].charity) {
+      let charityIconContainer = document.createElement("div");
+      let charityIcon = document.createElement("img");
+      let charityIconText = document.createElement("p");
+      charityIconText.textContent = "Benéfico";
+      charityIcon.src = "./img/icons/Charity.svg";
+      bar.appendChild(charityIconContainer);
+      charityIconContainer.appendChild(charityIcon);
+      charityIconContainer.appendChild(charityIconText);
+    }
+    // ICONOS DE CATEGORÍAS
+    for (let cat in listEvents[position].category) {
+      let categoryIconContainer = document.createElement("div");
+      let categoryIcon = document.createElement("img");
+      let categoryIconInfo = document.createElement("p");
+      switch (listEvents[position].category[cat]) {
+        case "Christmas":
+          categoryIconInfo.textContent = "Navidad";
+          categoryIcon.src = "./img/icons/Navidad.svg";
+          break;
+        case "Kids":
+          categoryIconInfo.textContent = "Infantil";
+          categoryIcon.src = "./img/icons/Kids.svg";
+          break;
+        case "Play":
+          categoryIconInfo.textContent = "Lúdico";
+          categoryIcon.src = "./img/icons/Play.svg";
+          break;
+        case "Music":
+          categoryIconInfo.textContent = "Música";
+          categoryIcon.src = "./img/icons/Music.svg";
+          break;
+        case "Sports":
+          categoryIconInfo.textContent = "Deporte";
+          categoryIcon.src = "./img/icons/Sports.svg";
+          break;
+        case "Theatre":
+          categoryIconInfo.textContent = "Teatro";
+          categoryIcon.src = "./img/icons/Theatre.svg";
+          break;
+        case "Party":
+          categoryIconInfo.textContent = "Fiestas";
+          categoryIcon.src = "./img/icons/Cocktail.svg";
+          break;
+        case "Food":
+          categoryIconInfo.textContent = "Gastronómico";
+          categoryIcon.src = "./img/icons/Food.svg";
+          break;
+        case "Museum":
+          categoryIconInfo.textContent = "Museo";
+          categoryIcon.src = "./img/icons/Museum.svg";
+          break;
+        default:
+          console.error(
+            `Hay ninguna categoria con ese nombre ${listEvents[position].category[cat]}`
+          );
+          break;
+      }
+      bar.appendChild(categoryIconContainer);
+      categoryIconContainer.appendChild(categoryIcon);
+      categoryIconContainer.appendChild(categoryIconInfo);
     }
   }
 }
+
 // Función que convierte número del mes en nombre del mes reducido en español
-function dateFormat(month) {
-  const monthShortNames = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
-  return `${month.getDate()} ${monthShortNames[month.getMonth()]}`
-  ;
+function dateFormat(month, dateShort = false) {
+  const monthNames = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+  let monthFormat = monthNames[month.getMonth()];
+  let year = month.getFullYear();
+  if (dateShort) {
+    monthFormat = monthFormat.toUpperCase().substring(0, 3);
+  }
+  return `${month.getDate()} ${monthFormat} ${year} `;
 }
+function allYear(dateFrom, dateTo) {
+  let dateFromNoYear = dateFrom.substr(0, 5);
+  let dateToNoYear = dateTo.substr(0, 6);
+
+  return dateFromNoYear === "1 ENE" && dateToNoYear === "31 DIC";
+}
+//función que muestra los eventos filtrados
+function resetAndCreateEventsFiltered(listFiltered) {
+  const resetContent = document.querySelector(".container-events");
+  resetContent.innerHTML = "";
+  if (listFiltered.length === [].length) {
+    console.error("No hay eventos ni página de 404");
+  } else {
+    listFiltered = responsiveNumberOfEvents(listFiltered);
+    createEvent(resetContent, listFiltered);
+  }
+}
+const FilterNav = document.querySelectorAll(".navegation > div");
+
+const navSelected =
+  "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
+const navUnselected =
+  "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
+FilterNav.forEach((category) => {
+  category.addEventListener("click", () => {
+    FilterNav.forEach((category) => (category.className = navUnselected));
+    category.className = navSelected;
+  });
+});
+
+FilterNav.forEach((category) =>
+  category.addEventListener("click", (e) => {
+    const idCategory = e.currentTarget.id;
+    switch (idCategory) {
+      case "all":
+        resetAndCreateEventsFiltered(allEvents);
+        break;
+      default:
+        resetAndCreateEventsFiltered(
+          allEvents.filter((events) => events.category.includes(idCategory))
+        );
+        break;
+    }
+  })
+);
 
 const allCTA = document.querySelectorAll(".btn-cta");
-allCTA.forEach((btn) => btn.addEventListener("click", () => {
-  window.location.href = "https://www.app.anecevents.com/";
-}));
+allCTA.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    window.location.href = "https://www.app.anecevents.com/";
+  })
+);
 
 /* Función del slider de logos de patrocinadores
  * Selecciono todas las imágenes del contenedor con la variable Sponsors lo que me da un array
