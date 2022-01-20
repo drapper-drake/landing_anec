@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && vite build",
-    "netlify": "rm -rf dist && NODE_ENV=production vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
@@ -41,5 +40,6 @@
     "url": "https://github.com/drapper-drake/landing_anec/issues"
   },
   "homepage": "https://github.com/drapper-drake/landing_anec#readme",
+
   "description": ""
 }
