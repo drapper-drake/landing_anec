@@ -249,37 +249,7 @@ allCTA.forEach((btn) =>
   })
 );
 
-/* Función del slider de logos de patrocinadores
- * Selecciono todas las imágenes del contenedor con la variable Sponsors lo que me da un array
- * */
-const Sponsors = document.querySelectorAll(".container-img>img");
-
-let indexSlider = 0;
-// Le añado a todas una clase que las oculta
-const hideImg = () => {
-  Sponsors.forEach((img) => img.classList.add("hidden"));
-};
-
-function nextSliderImg() {
-  if (indexSlider === 0 && Sponsors[indexSlider].className === "hidden") {
-    return Sponsors[indexSlider].classList.remove("hidden");
-  } else {
-    Sponsors[indexSlider].classList.add("hidden");
-    // Index se esta igualando a la condición del ternario
-    indexSlider = indexSlider < Sponsors.length - 1 ? indexSlider + 1 : 0;
-    Sponsors[indexSlider].classList.remove("hidden");
-  }
-}
-
-function responsiveFooter() {
-  if (window.innerWidth <= 768) {
-    hideImg();
-    nextSliderImg();
-    setInterval(nextSliderImg, 3000);
-  }
-}
-
 window.addEventListener("DOMContentLoaded", () => {
   createAll();
-  responsiveFooter();
+
 });
