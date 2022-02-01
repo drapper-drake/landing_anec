@@ -1,3 +1,4 @@
+import { listSrcCategories } from "./listSrcTitlesCategories.js"
 let allEvents = [];
 function createAll() {
   // se importa el json, se parsea y almacena en data
@@ -123,49 +124,10 @@ function createEvent(container, listEvents) {
       let categoryIconContainer = document.createElement("div");
       let categoryIcon = document.createElement("img");
       let categoryIconInfo = document.createElement("p");
-      switch (listEvents[position].category[cat]) {
-        case "Christmas":
-          categoryIconInfo.textContent = "Navidad";
-          categoryIcon.src = "./img/icons/Navidad.svg";
-          break;
-        case "Kids":
-          categoryIconInfo.textContent = "Infantil";
-          categoryIcon.src = "./img/icons/Kids.svg";
-          break;
-        case "Play":
-          categoryIconInfo.textContent = "Lúdico";
-          categoryIcon.src = "./img/icons/Play.svg";
-          break;
-        case "Music":
-          categoryIconInfo.textContent = "Música";
-          categoryIcon.src = "./img/icons/Music.svg";
-          break;
-        case "Sports":
-          categoryIconInfo.textContent = "Deporte";
-          categoryIcon.src = "./img/icons/Sports.svg";
-          break;
-        case "Theatre":
-          categoryIconInfo.textContent = "Teatro";
-          categoryIcon.src = "./img/icons/Theatre.svg";
-          break;
-        case "Party":
-          categoryIconInfo.textContent = "Fiestas";
-          categoryIcon.src = "./img/icons/Cocktail.svg";
-          break;
-        case "Food":
-          categoryIconInfo.textContent = "Gastronómico";
-          categoryIcon.src = "./img/icons/Food.svg";
-          break;
-        case "Museum":
-          categoryIconInfo.textContent = "Museo";
-          categoryIcon.src = "./img/icons/Museum.svg";
-          break;
-        default:
-          console.error(
-            `Hay ninguna categoria con ese nombre ${listEvents[position].category[cat]}`
-          );
-          break;
-      }
+      // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
+      categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
+      categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
+
       bar.appendChild(categoryIconContainer);
       categoryIconContainer.appendChild(categoryIcon);
       categoryIconContainer.appendChild(categoryIconInfo);
@@ -213,34 +175,37 @@ function resetAndCreateEventsFiltered(listFiltered) {
     createEvent(resetContent, listFiltered);
   }
 }
-const FilterNav = document.querySelectorAll(".navegation > div");
+const ChangeStyleAndFilter = (div) => {
+  div.addEventListener("click", (e) => {
+    const navSelected = "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
+    const navUnselected = "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
+    DivFilterCategory.forEach(div => div.className = navUnselected);
 
-const navSelected =
-  "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
-const navUnselected =
-  "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
-FilterNav.forEach((category) => {
-  category.addEventListener("click", () => {
-    FilterNav.forEach((category) => (category.className = navUnselected));
-    category.className = navSelected;
-  });
-});
-
-FilterNav.forEach((category) =>
-  category.addEventListener("click", (e) => {
+    div.className = navSelected;
     const idCategory = e.currentTarget.id;
-    switch (idCategory) {
-      case "all":
-        resetAndCreateEventsFiltered(allEvents);
-        break;
-      default:
-        resetAndCreateEventsFiltered(
-          allEvents.filter((events) => events.category.includes(idCategory))
-        );
-        break;
-    }
+    //Cambio Color SVG
+    document.querySelectorAll(`svg >path`).forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
+    document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")) //El seleccionado pasa Azul
+    activeCategory = idCategory;
+    filterByCategory(idCategory)
   })
-);
+}
+
+const DivFilterCategory = document.querySelectorAll(".navegation > div");
+DivFilterCategory.forEach(ChangeStyleAndFilter);
+const filterByCategory = (category) => {
+  if (category === "all") {
+    let list = [...allEvents];
+    pagination(list);
+    list = divideListEventForPagination(1, list);
+    resetAndCreateEventsFiltered(list);
+  } else {
+    let listCategoryEvent = allEvents.filter(events => events.category.includes(category));
+    pagination(listCategoryEvent);
+    listCategoryEvent = divideListEventForPagination(1, listCategoryEvent);
+    resetAndCreateEventsFiltered(listCategoryEvent);
+  }
+}
 
 const allCTA = document.querySelectorAll(".btn-cta");
 allCTA.forEach((btn) =>
