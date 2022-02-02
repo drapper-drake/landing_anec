@@ -17,7 +17,6 @@ p.logo {
 @layer components {
   .container-events {
     @apply h-min py-12 gap-4 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
-    /* @apply h-min grid grid-cols-3 gap-4 font-sans text-lg; */
   }
   .container-card {
     @apply bg-light rounded-2xl text-base cursor-pointer font-sans;
