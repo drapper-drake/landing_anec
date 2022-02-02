@@ -1,5 +1,6 @@
 import { listSrcCategories } from "./listSrcTitlesCategories.js"
 let allEvents = [];
+let activeCategory = "all";
 function createAll() {
   // se importa el json, se parsea y almacena en data
   fetch("./data/eventosAlicante.json")
@@ -196,13 +197,9 @@ DivFilterCategory.forEach(ChangeStyleAndFilter);
 const filterByCategory = (category) => {
   if (category === "all") {
     let list = [...allEvents];
-    pagination(list);
-    list = divideListEventForPagination(1, list);
     resetAndCreateEventsFiltered(list);
   } else {
     let listCategoryEvent = allEvents.filter(events => events.category.includes(category));
-    pagination(listCategoryEvent);
-    listCategoryEvent = divideListEventForPagination(1, listCategoryEvent);
     resetAndCreateEventsFiltered(listCategoryEvent);
   }
 }
