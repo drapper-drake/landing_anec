@@ -142,7 +142,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1639741285/anac-event/budgpcoatxwdtowytbj1.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642675899/anac-event/eupg1fbutegesxntxu9s.png",
     "linkTickets": "https://checkoutentradas.elcorteingles.es/open?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2VJUCI6IjQ2LjM3LjcwLjE4OCIsImlhdCI6MTY0MjM2MzkzOCwiZXhwIjoxNjQyMzY1NzM4LCJhdWQiOiJiZXRpeCJ9.BI0IXBBWJhm3XRSzgFhcML2QnrRpyL4JOphMEzc3wV0#/checkout/product/00-00087Mu/event/00-00087mT/show/00-0001Axc"
   },
   {
@@ -212,7 +212,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1639926847/anac-event/jrf5y8l0rigw0qpcymgp.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642677219/anac-event/kwqqt4rioeovp80jxxrr.png",
     "atributionsPhoto": "Yung Beef, en una imagen promocional por Borja Conde y María Simún",
     "linkTickets": "https://www.enterticket.es/eventos/concierto-yung-beef-alicante-2022-496899"
   },
@@ -230,8 +230,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1639927507/anac-event/iuiyebk58mxrdnnotkio.jpg",
-    "atributionsPhoto": "Yung Beef, en una imagen promocional por Borja Conde y María Simún",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642677569/anac-event/ddp9utewkxwexiend53z.png",
     "linkTickets": "https://www.enterticket.es/eventos/concierto-hard-gz-alicante-2022-165871"
   },
   {
@@ -248,7 +247,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1639927802/anac-event/cayhnfryfjvksthu1st3.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642676748/anac-event/ir5tzhlbcegwwjbjmn2a.png",
     "linkTickets": "https://www.enterticket.es/eventos/concierto-delaossa-alicante-2022-327878"
   },
   {
@@ -265,7 +264,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1639928160/anac-event/qsgrpstmtr8tm61vplim.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642675441/anac-event/hyh5pq3clos3xbk1eilp.png",
     "linkTickets": "https://www.enterticket.es/eventos/concierto-zetazen-alicante-2022-202291"
   },
   {
@@ -466,8 +465,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "El discurso de la exposición Mujeres. Entre Renoir y Sorolla aborda el rico universo femenino de finales del siglo XIX y comienzos del XX que constituye uno de los momentos más sugerentes de la historia del arte, motivado en buena medida por los numerosos cambios sociales y económicos de los que la mujer comienza a ser partícipe y protagonista.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641059944/MUBAG_-_Mujeres._Entre_Renoir_y_Sorolla_vu3bk8.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/mujeres-entre-renoir-y-sorolla/"
   },
   {
     "nameEvent": "Alicante. Paraje exótico. La mirada de Didier Petit de Meurville",
@@ -478,12 +478,13 @@
     "hoursOpen": "10:00",
     "hoursClose": "20:00",
     "dateStart": "2021/08/10",
-    "dateFinal": "2022/12/31",
+    "dateFinal": "2022/01/09",
     "category": [
       "Museum"
     ],
+    "comments": "La muestra está compuesta por veinticinco obras inéditas de Didier Petit de Meurville (Fond des Nègres, Haití 1793-Biarritz, Francia 1873), vicecónsul francés en Alicante de 1848 a 1857. De su labor como diplomático destaca la creación de una línea de barcos de vapor que favoreció la emigración y el comercio españoles con Argelia e impulsó el negocio del bacalao que había sido, hasta el momento, monopolio de los ingleses. Su cariño e implicación con Alicante lo demuestra brindando ayuda a los enfermos en la epidemia de cólera de 1854.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060101/MUBAG_-_Alicante._Paraje_ex%C3%B3tico._La_mirada_de_Didier_Petit_de_Meurville_wz3xos.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/alicante-paraje-exotico-la-mirada-de-didier-petit-de-meurville-1793-1873/"
   },
   {
     "nameEvent": "En consonancia. Emilio Varela y sus contemporáneos",
@@ -498,8 +499,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "La exposición En consonancia. Emilio Varela y sus contemporáneos está formada por 61 obras en total, procedentes tanto de la colección de la Diputación de Alicante como de cesiones de otras instituciones como el Museo Nacional Centro de Arte Reina Sofía, el Banco Sabadell, el Ayuntamiento de Alicante, la Fundación Caja Mediterráneo y la Fundación Cultural Frax.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060232/MUBAG_-_En_consonancia._Emilio_Varela_y_sus_contempor%C3%A1neos_clpvo6.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/en-consonancia-emilio-varela-y-sus-contemporaneos/"
   },
   {
     "nameEvent": "La ventana del arte",
@@ -514,8 +516,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "La ventana del arte es un ciclo dedicado a difundir a artistas con una trayectoria de reconocido prestigio y presentes en la colección de la Diputación de Alicante, con la muestra de obra creada recientemente y que se incorpora a los fondos para completar estas carreras artísticas de figuras claves del panorama cultural alicantino de los años 80 a los 2000.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060354/MUBAG_-_La_ventana_del_arte_azjt8p.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/la-ventana-del-arte/"
   },
   {
     "nameEvent": "A estudio. Piezas para nuevos discursos",
@@ -530,8 +533,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "La exposición A estudio. Piezas para nuevos discursos, está formada por doce obras, la mayoría hasta ahora no expuestas en el Mubag, fruto de adquisiciones, donaciones y depósitos que han configurado a lo largo de su historia la colección de la Diputación de Alicante.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060841/MUBAG_-_A_estudio._Piezas_para_nuevos_discursos_t1wdhz.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/a-estudio-piezas-para-nuevos-discursos/"
   },
   {
     "nameEvent": "La generación figurativa. Premios para la creación de un museo",
@@ -546,8 +550,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "La generación figurativa. Premios para la creación de un museo recoge la obra premiada en los Concursos Nacionales y Provinciales de Pintura que convocara la Diputación de Alicante entre 1952 y 1960. Los primeros premios de cada categoría, nacional y provincial, pasaban a ser propiedad de la Diputación. La finalidad principal de estos concursos era que estas obras se unieran al fondo existente y crear un museo de Bellas Artes con arte español.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060841/MUBAG_-_La_generaci%C3%B3n_figurativa._Premios_para_la_creaci%C3%B3n_de_un_museo_xemexh.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/la-generacion-figurativa-premios-para-la-creacion-de-un-museo/"
   },
   {
     "nameEvent": "Del informalismo a la abstracción mediterránea",
@@ -562,8 +567,9 @@
     "category": [
       "Museum"
     ],
+    "comments": "El MUBAG recupera como espacio expositivo la amplia galería de la planta baja, antiguo zaguán del palacio, para mostrar piezas del siglo XX de la colección artística de la Diputación de Alicante bajo el título Del informalismo a la abstracción mediterránea. Se han seleccionado dieciocho obras, realizadas de los años 60 a finales de los 80, por artistas españoles de gran proyección internacional que apostaron por transformar el arte, con el empleo de originales materiales y con la creación de nuevos lenguajes.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060841/MUBAG_-_Del_informalismo_a_la_abstracci%C3%B3n_mediterr%C3%A1nea_a7ztsm.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/del-informalismo-a-la-abstraccion-mediterranea/"
   },
   {
     "nameEvent": "Escuela de dibujo del Consulado Marítimo Terrestre",
@@ -578,14 +584,15 @@
     "category": [
       "Museum"
     ],
+    "comments": "La exposición que presentamos recupera a grandes pintores que desarrollaron su carrera entre los últimos años del siglo XVIII y la primera mitad del siglo XIX. Artistas cuyos inicios están vinculados a la Escuela de Dibujo del Consulado Marítimo y Terrestre, primera formación oficial relacionada con las bellas artes en Alicante, que inició sus pasos bajo la dirección de Vicente Suárez Ordóñez, instaurador del neoclasicismo en la escuela.",
     "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1641060841/MUBAG_-_Escuela_de_dibujo_del_Consulado_Mar%C3%ADtimo_Terrestre_s6bx65.jpg",
-    "linkTickets": "http://www.mubag.es/visita-el-museo/informacion-al-visitante/"
+    "linkTickets": "http://www.mubag.es/escuela-de-dibujo-del-consulado-maritimo-y-terrestre/"
   },
   {
     "nameEvent": "Refugios Antiaéreos de la Guerra Civil",
     "free": false,
     "price": 3.0,
-    "site": "Casa de Máquinas. Calle Italia, 19, 03003 Alicante.",
+    "site": "Calle Italia, 19, 03003 Alicante.",
     "cityLocation": "Alicante",
     "village": false,
     "dateStart": "2022/01/01",
@@ -1254,7 +1261,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1641316672/anac-event/zouvl7hs0a4hgiorm1uf.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642677219/anac-event/svyd9fpx9b3vbj3kr8bh.png",
     "linkTickets": "https://90shomenajealaruta.com/benidorm-2022-auditorio-julio-iglesias/"
   },
   {
@@ -1269,7 +1276,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1641316922/anac-event/pgr1ujs3tbv5y6dd2zan.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642674945/anac-event/crtwmdrvkrkarvigd92h.png",
     "linkTickets": "https://www.benidormpalace.com/entradas/"
   },
   {
@@ -1767,7 +1774,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1641985310/anac-event/xdswajgcxzggivgfjx8n.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642674559/anac-event/xvf7afngghiqvelftr2u.png",
     "linkTickets": "https://www.ticketmaster.es/event/arnau-griso-entradas/28305"
   },
   {
@@ -1782,7 +1789,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1641985367/anac-event/rtki2e1sk0xaypbsnaqo.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642677415/anac-event/crwtigd4wnmumt6vqvjh.png",
     "linkTickets": "https://www.wegow.com/es-cl/conciertos/concierto-de-vetusta-morla-en-alicante-gira-cable-a-tierra-2022"
   },
   {
@@ -2042,7 +2049,7 @@
     "category": [
       "Sports"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642426433/anac-event/m8q1hznyqpn1htzbal86.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642673989/anac-event/fs9ldftg0jkbxz4qae2h.png",
     "linkTickets": "https://inscripciones.mychip.es/es/evento/cami-dels-bandolers-senija-22"
   },
   {
@@ -2089,7 +2096,7 @@
     "category": [
       "Sports"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642426632/anac-event/zfemghaklv1ubvesiw5w.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642673767/anac-event/ir52l6l3onzxjnbyvggs.png",
     "linkTickets": "https://www.mychip.es/evento/arrapapedres-22?utm_source=ClubRunning.es&utm_medium=link"
   },
   {
@@ -2166,7 +2173,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642427000/anac-event/mfxsyfa20tj1ynjtrpat.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642675315/anac-event/ebhhzuggo2vp2iidamxh.png",
     "linkTickets": "https://www.wegow.com/es-pe/conciertos/konsumo-respeto-alicante"
   },
   {
@@ -2181,7 +2188,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642427045/anac-event/rp56hopxk3sk5ftaxttr.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642675603/anac-event/mev51fu1i8gcczr6brkb.png",
     "linkTickets": "https://tickets.wegow.com/events/capitan-cobarde-en-solitario-pildoras-musicales-auditorio-de-sant-joan-alicante"
   },
   {
@@ -2211,7 +2218,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642427170/anac-event/vjzsmbz16mevhqgiievt.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642676487/anac-event/ddml1c0eotmnfsmi7ksx.png",
     "linkTickets": "https://www.wegow.com/es-pe/conciertos/concierto-de-rayden-en-alicante-20-aniversario"
   },
   {
@@ -2227,7 +2234,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642351594/anac-event/icxhtglqvaeqchonivmi.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642674739/anac-event/trsdczo7hizwvu2qlezm.png",
     "atributionsPhoto": "Alejandro Sanz, en una imagen promocional por el corte inglés",
     "linkTickets": "https://www.elcorteingles.es/entradas/channels/conciertos-alejandro-sanz/performance/performance-0000087kq0000087Jr00000856L-alejandrosanz-channel"
   },
@@ -2260,7 +2267,7 @@
     "category": [
       "Music"
     ],
-    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642354595/anac-event/mot3jqgj8a0ytaubxehw.jpg",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642677740/anac-event/dc9c1ix1fmklh8elz87j.png",
     "linkTickets": "https://entradium.com/events/jamones-con-tacones-en-sant-joan-alicante"
   },
   {
@@ -2733,5 +2740,58 @@
     "comments": "La FILM SYMPHONY ORCHESTRA (FSO) vuelve a Alicante con un concierto de su gira ‘FÉNIX’ el 6 de marzo de 2022. Un emocionante espectáculo en torno a la mejor música de cine que representa el resurgir de la vida, del arte y de la cultura. Un zarpazo, un rugido, un espectacular viaje musical a través de las bandas sonoras más icónicas que el séptimo arte nos ha dejado. De la mano de la orquesta más peliculera y de su carismático director, Constantino Martínez-Orts escucharás peliculones como GLADIATOR, EL CÓDIGO DA VINCI, LA BELLA Y LA BESTIA, MATRIX o EL SEÑOR DE LOS ANILLOS, series de actualidad como THE MANDALORIAN o LOS BRIDGERTONS, y clásicos como WEST SIDE STORY, LA VIDA ES BELLA o EL EQUIPO A entre muchos otros.",
     "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1642594857/anac-event/nmdgd7fsmnddrd3tdjue.jpg",
     "linkTickets": "https://checkoutentradas.elcorteingles.es/open?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2VJUCI6Ijg3LjIxNy4yMTAuMjQ1IiwiaWF0IjoxNjQyNTk1MDYwLCJleHAiOjE2NDI1OTY4NjAsImF1ZCI6ImJldGl4In0.3d8M4OosGfXnKwBY1bUtjZfVU0vrr-tPqFhHt3XoqXs#/checkout/product/00-000889T/event/00-000887a/show/00-0001jGI"
+  },
+  {
+    "nameEvent": "Concierto FSO - Ara Malikian",
+    "free": false,
+    "price": 38,
+    "site": "Teatro Río, Plaça Sant Vicent, 0, 03440 Ibi, Alicante",
+    "cityLocation": "Ibi",
+    "village": true,
+    "hoursOpen": "21:00",
+    "hoursClose": "22:30",
+    "dateStart": "2022/04/02",
+    "category": [
+      "Music"
+    ],
+    "comments": "Cuando vi a mi hijo caminar por primera vez después de meses de caídas, de intentos fallidos, de golpes y vuelta a probar,  entendí que un día todos fuimos esa fuerza que el tiempo hace que olvidemos.Los niños son los seres más auténticos que te puedes encontrar, son salvajes, son la ternura en su esencia y están llenos de una verdad insultante, no tienen miedo a equivocarse, son libres y expresivos y todo lo que hacen está repleto de arte. Si miras a un niño entiendes casi todo lo que fuiste y hace un tiempo que no te permites ser. Esta gira es el resultado de ver crecer a mi hijo, es el resultado de mi crecimiento a su lado, es todos esos sonidos y melodías que intentan darle forma a lo que he sentido y me ha inspirado de él y de la vida a través de él. Es un encuentro con el niño que no pude ser y hubiera soñado ser. Es un homenaje a esos seres que son tan libres como un pájaro libre. Esta gira está llena de dinosaurios, calamares robóticos, máquinas del tiempo, pianos voladores y mimos bilingües, este disco es eso que yo había olvidado y que es tan poderoso; la Magia de encontrar cada día y cada senda fascinantes, traigan lo que traigan.",
+    "photoEvent": "https://res.cloudinary.com/ddn278n2q/image/upload/v1643624853/anac-event/orwyv2s8ctlqaongygzm.png",
+    "linkTickets": "https://aramalikian.entradas.plus/entradas/concierto-ara-malikian-ibi-2022?_ga=2.166894263.86932489.1643623624-1888835327.1643623624"
+  },
+  {
+    "nameEvent": "III Edición Jornadas Gastronómicas Tapa Cofrade",
+    "free": false,
+    "price": 4,
+    "site": "Restaurante Chapeau, Calle General O´Donnell, 17, 03003 Alicante",
+    "cityLocation": "Alicante",
+    "village": false,
+    "hoursOpen": "11:00",
+    "hoursClose": "24:00",
+    "dateStart": "2022/03/04",
+    "dateFinal": "2022/04/08",
+    "category": [
+      "Food"
+    ],
+    "comments": "La “Tapa Cofrade” se servirá desde el 4 de marzo hasta el 8 de abril. Para la elaboración de la Tapa Cofrade no se tendrán en cuenta las restricciones de no incluir ni carnes ni embutidos, al no estar restringida su disponibilidad a los viernes cuaresmales. Los participantes podrán ofrecer su Tapa Cofrade o bien todos los días que dura el evento, o bien sólo en alguno de los días a su elección (en la ficha hay un apartado donde hay que indicarlo). Los únicos requisitos para poder participar son que el establecimiento esté asociado a APEHA y al corriente de pago. El establecimiento interesado ha de cumplimentar la ficha de inscripción que se adjunta, detallando la Tapa Cofrade con la que participará, teniendo en cuenta que la tapa se debe servir con una caña o quinto de cerveza, y ambas cosas tendrán un precio conjunto de 4 euros (IVA incluido). Y es imprescindible especificar si la tapa es apta para celíacos o se les puede adaptar (ya que hay un numeroso grupo de celíacos interesados en este evento). En esta edición se realizará en las redes sociales de APEHA un concurso entre los clientes para que voten a su tapa favorita. Se incentivará la participación con premios para los clientes que voten. La tapa más votada recibirá un diploma que certifique haber sido la tapa preferida por el público.",
+    "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1643635816/Jornadas_Gastron%C3%B3micas_Tapa_Cofrade_-_Alicante_-_Recortado_j8b5e8.png",
+    "linkTickets": "https://www.alicantehosteleria.com/inscripcion-jornadas-de-cuaresma-tapa-y-menus-viernes"
+  },
+  {
+    "nameEvent": "III Edición Menús viernes de Cuaresma",
+    "free": false,
+    "price": 10,
+    "site": "ToBar Tapas, Calle Poeta Campos Vasallo, 31, 03004 Alicante",
+    "cityLocation": "Alicante",
+    "village": false,
+    "hoursOpen": "11:00",
+    "hoursClose": "24:00",
+    "dateStart": "2022/03/04",
+    "dateFinal": "2022/04/08",
+    "category": [
+      "Food"
+    ],
+    "comments": "En 2022 la Cuaresma dura desde el miércoles 2 de marzo hasta el jueves 14 de abril, y los “Menús viernes de Cuaresma” se servirán sólo los viernes 4, 11, 18, 25 de marzo, 1 y 8 de abril. Debéis tener en cuenta para la elaboración de los platos típicos de los viernes de Cuaresma, que los ingredientes no pueden incluir ni carnes ni embutidos. Sí que están admitidos todo tipo de pescados, verduras y legumbres; así como los dulces, que se convierten en el plato estrella (gracias a que los lácteos y los huevos, que en un principio estaban prohibidos, hace tiempo que fueron excluidos de las restricciones del ayuno pascual). Los platos de Cuaresma suelen ser consistentes y con gran capacidad de saciar el apetito, para evitar la tentación de comer carne. Los restaurantes participantes podrán ofrecer su menú o bien en los seis viernes cuaresmales, o bien sólo en alguno de los viernes a su elección (en la ficha hay un apartado donde hay que indicarlo). Los únicos requisitos para poder participar son que el establecimiento esté asociado a APEHA y al corriente de pago. El restaurante interesado ha de cumplimentar la ficha de inscripción que se adjunta, detallando el menú con el que participará: serán menús con un precio libre indicándolo  con IVA incluido, por la austeridad que requiere este periodo; quedando a decisión del establecimiento si el precio incluye la bebida o no. El menú consistirá en entrantes (en el número que se considere oportuno), un plato principal típico de Cuaresma, y postre. Y es imprescindible especificar si el menú es apto para celíacos o se les puede adaptar (ya que hay un numeroso grupo de celíacos interesados en este evento).",
+    "photoEvent": "https://res.cloudinary.com/dlwvv3xmg/image/upload/v1643635815/Jornadas_Gastron%C3%B3micas_Viernes_de_cuaresma_-_Alicante_-_Recortado_edwple.png",
+    "linkTickets": "https://www.alicantehosteleria.com/inscripcion-jornadas-de-cuaresma-tapa-y-menus-viernes"
   }
 ]
