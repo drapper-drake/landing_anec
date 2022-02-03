@@ -16,16 +16,19 @@ p.logo {
 
 @layer components {
   .container-events {
-    @apply h-min py-12 gap-4 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
-    /* @apply h-min grid grid-cols-3 gap-4 font-sans text-lg; */
+    @apply h-min py-12 gap-4 w-4/5 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
+
   .container-card {
-    @apply bg-light rounded-2xl text-base cursor-pointer font-sans;
-    box-shadow: 0px 10px 12px 4px #00000050;
+    @apply bg-light rounded-2xl text-base font-sans;
+
+    box-shadow: 0 10px 12px 4px #00000050;
   }
+
   .photoEvent {
     @apply w-full h-40 relative;
   }
+
   .photoEvent > img {
     @apply w-full h-full object-cover rounded-tl-2xl rounded-tr-2xl;
   }
@@ -44,29 +47,38 @@ p.logo {
 
   .icons-bar {
     @apply w-full py-2.5 bg-light rounded-[80px] flex flex-row flex-wrap justify-evenly;
-    box-shadow: 0px 2px 4px #00000050;
+
+    box-shadow: 0 2px 4px #00000050;
   }
+
   .icons-bar > div {
     @apply flex flex-col items-center;
   }
+
   .icons-bar > div > img {
     @apply w-6 h-6;
   }
+
   .bookmark {
     @apply w-12 h-12 flex justify-center items-end absolute top-0 left-0;
   }
+
   .tooltip {
     @apply w-12 h-12 flex justify-center items-end absolute top-0 right-0;
   }
+
   .tooltip .tooltip-text {
     @apply hidden w-24 bg-black text-white text-center rounded-md px-1 py-1 absolute z-[1] bottom-full left-1/2 -translate-x-1/2;
   }
+
   .tooltip:hover .tooltip-text {
     @apply block opacity-100;
   }
+
   .tooltip .tooltip-text::after {
     @apply absolute top-full left-1/2 -ml-1 border-[5px] border-solid;
+
     content: " ";
-    border-color: black transparent transparent transparent;
+    border-color: black transparent transparent;
   }
 }

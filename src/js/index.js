@@ -1,4 +1,6 @@
-let allEvents = [];
+import { listSrcCategories } from "./listSrcTitlesCategories.js";
+const allEvents = [];
+let activeCategory = "all";
 function createAll() {
   // se importa el json, se parsea y almacena en data
   fetch("./data/eventosAlicante.json")
@@ -6,7 +8,7 @@ function createAll() {
     .then((data) => {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
-      for (let evento in data) {
+      for (const evento in data) {
         let idEvent = data[evento].nameEvent;
         idEvent = idEvent
           .toLowerCase()
@@ -42,40 +44,41 @@ function changeformatDateJSON() {
 
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
 function createEvent(container, listEvents) {
-  for (let position in listEvents) {
-    //Llamar función que imprime la fecha en el orden deseado
-    let dateStart = dateFormat(listEvents[position].dateStart, true);
-    let containerCard = document.createElement("div");
+  for (const position in listEvents) {
+    // Llamar función que imprime la fecha en el orden deseado
+    const dateStart = dateFormat(listEvents[position].dateStart, true);
+    const containerCard = document.createElement("div");
     containerCard.className = "container-card";
     containerCard.dataset.id = listEvents[position].id;
-    //DIV DE LA IMAGEN
-    let photoEvent = document.createElement("div");
+    // DIV DE LA IMAGEN
+    const photoEvent = document.createElement("div");
     photoEvent.className = "photoEvent";
-    //IMAGEN
-    let image = document.createElement("img");
+    // IMAGEN
+    const image = document.createElement("img");
     image.src = listEvents[position].photoEvent;
-    //DATOS TARJETA
-    let infoCard = document.createElement("div");
+    image.alt = listEvents[position].nameEvent;
+    // DATOS TARJETA
+    const infoCard = document.createElement("div");
     infoCard.className = "info-card";
     // NOMBRE
-    let name = document.createElement("h3");
+    const name = document.createElement("h3");
     name.innerText = listEvents[position].nameEvent;
     // LUGAR
-    let place = document.createElement("p");
+    const place = document.createElement("p");
     place.innerText = listEvents[position].cityLocation;
     // BARRA DE ICONOS
-    let bar = document.createElement("div");
+    const bar = document.createElement("div");
     bar.className = "icons-bar";
     // FECHA
-    let date = document.createElement("p");
+    const date = document.createElement("p");
     date.innerText = `Solo el ${dateStart}`;
     if (listEvents[position].hasOwnProperty("dateFinal")) {
-      let dateF = dateFormat(listEvents[position].dateFinal, true);
-      let resultado = allYear(dateStart, dateF);
+      const dateF = dateFormat(listEvents[position].dateFinal, true);
+      const resultado = allYear(dateStart, dateF);
       if (!resultado) {
         date.innerText = `Del ${dateStart}  al ${dateF}`;
       } else {
-        date.innerText = `Todo el año`;
+        date.innerText = "Todo el año";
       }
     }
 
@@ -89,10 +92,10 @@ function createEvent(container, listEvents) {
     infoCard.appendChild(bar);
 
     // ICONO GRATUITO / DE PAGO
-    let freeIconContainer = document.createElement("div");
+    const freeIconContainer = document.createElement("div");
     freeIconContainer.className = "tooltip";
-    let freeIcon = document.createElement("img");
-    let freeIconText = document.createElement("span");
+    const freeIcon = document.createElement("img");
+    const freeIconText = document.createElement("span");
     freeIconText.className = "tooltip-text";
     photoEvent.appendChild(freeIconContainer);
     freeIconContainer.appendChild(freeIcon);
@@ -109,9 +112,9 @@ function createEvent(container, listEvents) {
     }
     // ICONO BENÉFICO
     if (listEvents[position].charity) {
-      let charityIconContainer = document.createElement("div");
-      let charityIcon = document.createElement("img");
-      let charityIconText = document.createElement("p");
+      const charityIconContainer = document.createElement("div");
+      const charityIcon = document.createElement("img");
+      const charityIconText = document.createElement("p");
       charityIconText.textContent = "Benéfico";
       charityIcon.src = "./img/icons/Charity.svg";
       bar.appendChild(charityIconContainer);
@@ -119,53 +122,14 @@ function createEvent(container, listEvents) {
       charityIconContainer.appendChild(charityIconText);
     }
     // ICONOS DE CATEGORÍAS
-    for (let cat in listEvents[position].category) {
-      let categoryIconContainer = document.createElement("div");
-      let categoryIcon = document.createElement("img");
-      let categoryIconInfo = document.createElement("p");
-      switch (listEvents[position].category[cat]) {
-        case "Christmas":
-          categoryIconInfo.textContent = "Navidad";
-          categoryIcon.src = "./img/icons/Navidad.svg";
-          break;
-        case "Kids":
-          categoryIconInfo.textContent = "Infantil";
-          categoryIcon.src = "./img/icons/Kids.svg";
-          break;
-        case "Play":
-          categoryIconInfo.textContent = "Lúdico";
-          categoryIcon.src = "./img/icons/Play.svg";
-          break;
-        case "Music":
-          categoryIconInfo.textContent = "Música";
-          categoryIcon.src = "./img/icons/Music.svg";
-          break;
-        case "Sports":
-          categoryIconInfo.textContent = "Deporte";
-          categoryIcon.src = "./img/icons/Sports.svg";
-          break;
-        case "Theatre":
-          categoryIconInfo.textContent = "Teatro";
-          categoryIcon.src = "./img/icons/Theatre.svg";
-          break;
-        case "Party":
-          categoryIconInfo.textContent = "Fiestas";
-          categoryIcon.src = "./img/icons/Cocktail.svg";
-          break;
-        case "Food":
-          categoryIconInfo.textContent = "Gastronómico";
-          categoryIcon.src = "./img/icons/Food.svg";
-          break;
-        case "Museum":
-          categoryIconInfo.textContent = "Museo";
-          categoryIcon.src = "./img/icons/Museum.svg";
-          break;
-        default:
-          console.error(
-            `Hay ninguna categoria con ese nombre ${listEvents[position].category[cat]}`
-          );
-          break;
-      }
+    for (const cat in listEvents[position].category) {
+      const categoryIconContainer = document.createElement("div");
+      const categoryIcon = document.createElement("img");
+      const categoryIconInfo = document.createElement("p");
+      // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
+      categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
+      categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
+
       bar.appendChild(categoryIconContainer);
       categoryIconContainer.appendChild(categoryIcon);
       categoryIconContainer.appendChild(categoryIconInfo);
@@ -190,19 +154,19 @@ function dateFormat(month, dateShort = false) {
     "Diciembre",
   ];
   let monthFormat = monthNames[month.getMonth()];
-  let year = month.getFullYear();
+  const year = month.getFullYear();
   if (dateShort) {
     monthFormat = monthFormat.toUpperCase().substring(0, 3);
   }
   return `${month.getDate()} ${monthFormat} ${year} `;
 }
 function allYear(dateFrom, dateTo) {
-  let dateFromNoYear = dateFrom.substr(0, 5);
-  let dateToNoYear = dateTo.substr(0, 6);
+  const dateFromNoYear = dateFrom.substr(0, 5);
+  const dateToNoYear = dateTo.substr(0, 6);
 
   return dateFromNoYear === "1 ENE" && dateToNoYear === "31 DIC";
 }
-//función que muestra los eventos filtrados
+// función que muestra los eventos filtrados
 function resetAndCreateEventsFiltered(listFiltered) {
   const resetContent = document.querySelector(".container-events");
   resetContent.innerHTML = "";
@@ -213,34 +177,33 @@ function resetAndCreateEventsFiltered(listFiltered) {
     createEvent(resetContent, listFiltered);
   }
 }
-const FilterNav = document.querySelectorAll(".navegation > div");
+const ChangeStyleAndFilter = (div) => {
+  div.addEventListener("click", (e) => {
+    const navSelected = "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
+    const navUnselected = "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
+    DivFilterCategory.forEach(div => div.className = navUnselected);
 
-const navSelected =
-  "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
-const navUnselected =
-  "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
-FilterNav.forEach((category) => {
-  category.addEventListener("click", () => {
-    FilterNav.forEach((category) => (category.className = navUnselected));
-    category.className = navSelected;
-  });
-});
-
-FilterNav.forEach((category) =>
-  category.addEventListener("click", (e) => {
+    div.className = navSelected;
     const idCategory = e.currentTarget.id;
-    switch (idCategory) {
-      case "all":
-        resetAndCreateEventsFiltered(allEvents);
-        break;
-      default:
-        resetAndCreateEventsFiltered(
-          allEvents.filter((events) => events.category.includes(idCategory))
-        );
-        break;
-    }
-  })
-);
+    // Cambio Color SVG
+    document.querySelectorAll("svg >path").forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
+    document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")); // El seleccionado pasa Azul
+    activeCategory = idCategory;
+    filterByCategory(idCategory);
+  });
+};
+
+const DivFilterCategory = document.querySelectorAll(".navegation > div");
+DivFilterCategory.forEach(ChangeStyleAndFilter);
+const filterByCategory = (category) => {
+  if (category === "all") {
+    const list = [...allEvents];
+    resetAndCreateEventsFiltered(list);
+  } else {
+    const listCategoryEvent = allEvents.filter(events => events.category.includes(category));
+    resetAndCreateEventsFiltered(listCategoryEvent);
+  }
+};
 
 const allCTA = document.querySelectorAll(".btn-cta");
 allCTA.forEach((btn) =>
@@ -249,37 +212,6 @@ allCTA.forEach((btn) =>
   })
 );
 
-/* Función del slider de logos de patrocinadores
- * Selecciono todas las imágenes del contenedor con la variable Sponsors lo que me da un array
- * */
-const Sponsors = document.querySelectorAll(".container-img>img");
-
-let indexSlider = 0;
-// Le añado a todas una clase que las oculta
-const hideImg = () => {
-  Sponsors.forEach((img) => img.classList.add("hidden"));
-};
-
-function nextSliderImg() {
-  if (indexSlider === 0 && Sponsors[indexSlider].className === "hidden") {
-    return Sponsors[indexSlider].classList.remove("hidden");
-  } else {
-    Sponsors[indexSlider].classList.add("hidden");
-    // Index se esta igualando a la condición del ternario
-    indexSlider = indexSlider < Sponsors.length - 1 ? indexSlider + 1 : 0;
-    Sponsors[indexSlider].classList.remove("hidden");
-  }
-}
-
-function responsiveFooter() {
-  if (window.innerWidth <= 768) {
-    hideImg();
-    nextSliderImg();
-    setInterval(nextSliderImg, 3000);
-  }
-}
-
 window.addEventListener("DOMContentLoaded", () => {
   createAll();
-  responsiveFooter();
 });
