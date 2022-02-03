@@ -56,6 +56,7 @@ function createEvent(container, listEvents) {
     // IMAGEN
     const image = document.createElement("img");
     image.src = listEvents[position].photoEvent;
+    image.alt = listEvents[position].nameEvent;
     // DATOS TARJETA
     const infoCard = document.createElement("div");
     infoCard.className = "info-card";
