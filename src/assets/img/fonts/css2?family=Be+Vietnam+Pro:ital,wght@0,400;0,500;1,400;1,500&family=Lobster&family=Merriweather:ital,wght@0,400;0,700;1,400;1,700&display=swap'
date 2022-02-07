@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVNSTAyLFyeg_IDWvOJmVES_HwyBX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVKSTAyLFyeg_IDWvOJmVES_HwyPYsxRbg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVPSTAyLFyeg_IDWvOJmVES_Eww.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVMSTAyLFyeg_IDWvOJmVES_HTEJl8y.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9_oU.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/merriweather/v28/u-4m0qyriQwlOrhSvowK_l5-eSZJ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/merriweather/v28/u-4l0qyriQwlOrhSvowK_l5-eR71Wsf_.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/merriweather/v28/u-440qyriQwlOrhSvowK_l5Oew.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/merriweather/v28/u-4n0qyriQwlOrhSvowK_l52xwNpXw.ttf) format('truetype');
+}
