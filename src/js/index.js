@@ -118,6 +118,7 @@ function createEvent(container, listEvents) {
       const charityIcon = document.createElement("img");
       const charityIconText = document.createElement("p");
       charityIconText.textContent = "Benéfico";
+      charityIcon.alt = " ";
       charityIcon.src = "./img/icons/Charity.svg";
       bar.appendChild(charityIconContainer);
       charityIconContainer.appendChild(charityIcon);
@@ -131,7 +132,7 @@ function createEvent(container, listEvents) {
       // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
       categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
       categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
-
+      categoryIcon.alt = listSrcCategories[listEvents[position].category[cat]].nameIconEvent;
       bar.appendChild(categoryIconContainer);
       categoryIconContainer.appendChild(categoryIcon);
       categoryIconContainer.appendChild(categoryIconInfo);
