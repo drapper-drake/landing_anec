@@ -25,11 +25,11 @@ p.logo {
     box-shadow: 0 10px 12px 4px #00000050;
   }
 
-  .photoEvent {
+  .photo-event {
     @apply w-full h-40 relative;
   }
 
-  .photoEvent > img {
+  .photo-event > img {
     @apply w-full h-full object-cover rounded-tl-2xl rounded-tr-2xl;
   }
 

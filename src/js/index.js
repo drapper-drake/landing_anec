@@ -52,7 +52,7 @@ function createEvent(container, listEvents) {
     containerCard.dataset.id = listEvents[position].id;
     // DIV DE LA IMAGEN
     const photoEvent = document.createElement("div");
-    photoEvent.className = "photoEvent";
+    photoEvent.className = "photo-event";
     // IMAGEN
     const image = document.createElement("img");
     image.src = listEvents[position].photoEvent;
@@ -181,7 +181,9 @@ const ChangeStyleAndFilter = (div) => {
   div.addEventListener("click", (e) => {
     const navSelected = "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
     const navUnselected = "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
-    DivFilterCategory.forEach(div => div.className = navUnselected);
+    DivFilterCategory.forEach(div => {
+      div.className = navUnselected;
+    });
 
     div.className = navSelected;
     const idCategory = e.currentTarget.id;
