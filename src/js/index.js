@@ -9,11 +9,13 @@ function createAll() {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
       for (const evento in data) {
+
         let idEvent = data[evento].nameEvent;
         idEvent = idEvent
           .toLowerCase()
           .replace(/ /g, "-")
           .replace(/[^\w-]+/g, "");
+        data[evento].photoEvent = data[evento].photoEvent.replace("upload", "upload/w_500").replace("jpg", "webp");
         data[evento].id = idEvent;
         allEvents.push(data[evento]);
       }
@@ -56,7 +58,7 @@ function createEvent(container, listEvents) {
     // IMAGEN
     const image = document.createElement("img");
     image.src = listEvents[position].photoEvent;
-    image.alt = listEvents[position].nameEvent;
+    image.alt = `Cartel del evento ${listEvents[position].nameEvent}`;
     // DATOS TARJETA
     const infoCard = document.createElement("div");
     infoCard.className = "info-card";
