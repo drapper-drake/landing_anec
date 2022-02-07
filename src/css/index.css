@@ -41,10 +41,6 @@
 p.logo {
   text-shadow: 4px 0 0 #0b4da5;
 }
-.prueba {
-  text-shadow: 4px 0 0 #0b4da5;
-}
-
 @layer components {
   .container-events {
     @apply h-min py-12 gap-4 w-4/5 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
