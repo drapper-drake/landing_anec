@@ -41,6 +41,9 @@
 p.logo {
   text-shadow: 4px 0 0 #0b4da5;
 }
+.prueba {
+  text-shadow: 4px 0 0 #0b4da5;
+}
 
 @layer components {
   .container-events {
