@@ -236,7 +236,7 @@ allCTA.forEach((btn) =>
   })
 );
 function randomImageHeader() {
-  const SRC_IMAGES = ["/img/header/party.png", "/img/header/play.webp", "/img/header/food.webp", "/img/header/kids.webp", "/img/header/play.webp", "/img/header/music.webp", "/img/header/sport.webp"]
+  const SRC_IMAGES = ["/img/header/party.png", "/img/header/play.webp", "/img/header/food.webp", "/img/header/kids.webp", "/img/header/play.webp", "/img/header/music.webp", "/img/header/sport.webp", "/img/header/museum.webp", "/img/header/theatre.webp"]
   const randomNumber = () => Math.trunc(Math.random() * SRC_IMAGES.length);
   const container = document.querySelector("#image-random")
   let img = document.createElement('img')
