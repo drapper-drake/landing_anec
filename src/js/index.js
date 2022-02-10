@@ -1,4 +1,5 @@
 import { listSrcCategories } from "./listSrcTitlesCategories.js";
+
 const allEvents = [];
 let activeCategory = "all";
 function createAll() {
@@ -15,15 +16,36 @@ function createAll() {
           .toLowerCase()
           .replace(/ /g, "-")
           .replace(/[^\w-]+/g, "");
+        //Reajusta el tamaño de las imágenes de las tarjetas desde la URL
         data[evento].photoEvent = data[evento].photoEvent.replace("upload", "upload/w_500").replace("jpg", "webp");
         data[evento].id = idEvent;
-        allEvents.push(data[evento]);
+        //hace directamente la función changeFormatData
+        data[evento].dateStart = new Date(data[evento].dateStart);
+        if (data[evento].hasOwnProperty("dateFinal")) {
+          data[evento].dateFinal = new Date(data[evento].dateFinal);
+        }
+        if (isCurrentEventActive(data[evento])) {
+          allEvents.push(data[evento]);
+        }
       }
-      changeformatDateJSON();
       allEvents.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
       createEvent(content, responsiveNumberOfEvents(allEvents));
     });
+}
+function isCurrentEventActive(eventCurrent) {
+  const TODAY = new Date();
+  const startEvent = eventCurrent.dateStart.getTime()
+  if (TODAY < startEvent) {
+    return true;
+  }
+  if (eventCurrent.hasOwnProperty("dateFinal")) {
+    const finishEvent = eventCurrent.dateFinal.getTime()
+    if (TODAY >= startEvent && TODAY <= finishEvent) {
+      return true;
+    }
+  }
+  return false;
 }
 function responsiveNumberOfEvents(list) {
   let numberOfEvents = 8;
@@ -34,14 +56,6 @@ function responsiveNumberOfEvents(list) {
     numberOfEvents = list.length;
   }
   return list.slice(0, numberOfEvents);
-}
-function changeformatDateJSON() {
-  for (const index in allEvents) {
-    allEvents[index].dateStart = new Date(allEvents[index].dateStart);
-    if (allEvents[index].hasOwnProperty("dateFinal")) {
-      allEvents[index].dateFinal = new Date(allEvents[index].dateFinal);
-    }
-  }
 }
 
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
@@ -54,7 +68,7 @@ function createEvent(container, listEvents) {
     containerCard.dataset.id = listEvents[position].id;
     // DIV DE LA IMAGEN
     const photoEvent = document.createElement("div");
-    photoEvent.className = "photoEvent";
+    photoEvent.className = "photo-event";
     // IMAGEN
     const image = document.createElement("img");
     image.src = listEvents[position].photoEvent;
@@ -64,15 +78,18 @@ function createEvent(container, listEvents) {
     infoCard.className = "info-card";
     // NOMBRE
     const name = document.createElement("h3");
+    name.tabIndex = "0"
     name.innerText = listEvents[position].nameEvent;
     // LUGAR
     const place = document.createElement("p");
+    place.tabIndex = "0"
     place.innerText = listEvents[position].cityLocation;
     // BARRA DE ICONOS
     const bar = document.createElement("div");
     bar.className = "icons-bar";
     // FECHA
     const date = document.createElement("p");
+    date.tabIndex = "0"
     date.innerText = `Solo el ${dateStart}`;
     if (listEvents[position].hasOwnProperty("dateFinal")) {
       const dateF = dateFormat(listEvents[position].dateFinal, true);
@@ -83,7 +100,13 @@ function createEvent(container, listEvents) {
         date.innerText = "Todo el año";
       }
     }
-
+    let infoSR = document.createElement('p')
+    infoSR.className = "sr-only"
+    infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago"
+    let infoCategoriesSR = document.createElement('p')
+    infoCategoriesSR.tabIndex = "0"
+    infoCategoriesSR.className = "sr-only"
+    infoCategoriesSR.innerText = 'Categorias del evento:'
     container.appendChild(containerCard);
     containerCard.appendChild(photoEvent);
     photoEvent.appendChild(image);
@@ -91,13 +114,16 @@ function createEvent(container, listEvents) {
     infoCard.appendChild(name);
     infoCard.appendChild(place);
     infoCard.appendChild(date);
+    infoCard.appendChild(infoSR);
     infoCard.appendChild(bar);
+    bar.appendChild(infoCategoriesSR);
 
     // ICONO GRATUITO / DE PAGO
     const freeIconContainer = document.createElement("div");
     freeIconContainer.className = "tooltip";
     const freeIcon = document.createElement("img");
     const freeIconText = document.createElement("span");
+    freeIcon.tabIndex = "0  "
     freeIconText.className = "tooltip-text";
     photoEvent.appendChild(freeIconContainer);
     freeIconContainer.appendChild(freeIcon);
@@ -118,6 +144,7 @@ function createEvent(container, listEvents) {
       const charityIcon = document.createElement("img");
       const charityIconText = document.createElement("p");
       charityIconText.textContent = "Benéfico";
+      charityIcon.alt = " ";
       charityIcon.src = "./img/icons/Charity.svg";
       bar.appendChild(charityIconContainer);
       charityIconContainer.appendChild(charityIcon);
@@ -129,9 +156,10 @@ function createEvent(container, listEvents) {
       const categoryIcon = document.createElement("img");
       const categoryIconInfo = document.createElement("p");
       // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
+      categoryIconInfo.tabIndex = "0"
       categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
       categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
-
+      categoryIcon.alt = "Icono de" + listSrcCategories[listEvents[position].category[cat]].nameIconEvent;
       bar.appendChild(categoryIconContainer);
       categoryIconContainer.appendChild(categoryIcon);
       categoryIconContainer.appendChild(categoryIconInfo);
@@ -181,21 +209,17 @@ function resetAndCreateEventsFiltered(listFiltered) {
 }
 const ChangeStyleAndFilter = (div) => {
   div.addEventListener("click", (e) => {
-    const navSelected = "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
-    const navUnselected = "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
-    DivFilterCategory.forEach(div => div.className = navUnselected);
-
-    div.className = navSelected;
+    DivFilterCategory.forEach(div => {
+      div.className = "filter-unselected";
+    });
+    div.className = "filter-selected";
     const idCategory = e.currentTarget.id;
-    // Cambio Color SVG
-    document.querySelectorAll("svg >path").forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
-    document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")); // El seleccionado pasa Azul
     activeCategory = idCategory;
     filterByCategory(idCategory);
   });
 };
 
-const DivFilterCategory = document.querySelectorAll(".navegation > div");
+const DivFilterCategory = document.querySelectorAll(".navegation > button");
 DivFilterCategory.forEach(ChangeStyleAndFilter);
 const filterByCategory = (category) => {
   if (category === "all") {
@@ -213,7 +237,18 @@ allCTA.forEach((btn) =>
     window.location.href = "https://www.app.anecevents.com/";
   })
 );
-
+function randomImageHeader() {
+  const category = ["party", "play", "food", "kids", "play", "music", "sport", "museum", "theatre"]
+  const randomNumber = () => Math.trunc(Math.random() * category.length);
+  const imageRandom = category[randomNumber()];
+  const altImg = { "party": "Imagen de patos de fiesta", "play": "Imagen de patos disfrutando de una barbacoa", "food": "Imagen de un pato en un restaurante", "kids": "Imagen de patitos echando una carrera", "music": "Imagen de pato saxofonista", "sport": "Imagen de pato haciendo una ruta y avistando aves", "museum": "Imagen de pato en el museo", "theatre": "Imagen de obra de teatro con brujas con patos" }
+  const container = document.querySelector("#image-random");
+  let img = document.createElement('img');
+  img.src = `/img/header/${imageRandom}.webp`;
+  img.alt = altImg[imageRandom];
+  container.appendChild(img);
+}
 window.addEventListener("DOMContentLoaded", () => {
+  randomImageHeader();
   createAll();
 });

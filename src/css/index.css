@@ -1,20 +1,69 @@
 /* stylelint-disable at-rule-no-unknown */
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    font-weight: 400;
+    src:
+      url('/fonts/BeVietnamPro/BeVietnam-400.woff') format('woff'),
+      url('/fonts/BeVietnamPro/BeVietnam-400.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    src:
+      url('/fonts/Merriweather/Merriweather-700.woff') format('woff'),
+      url('/fonts/Merriweather/Merriweather-700.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Merriweather';
+    font-weight: 500;
+    src:
+      url('/fonts/Merriweather/Merriweather-500.woff') format('woff'),
+      url('/fonts/Merriweather/Merriweather-500.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Lobster';
+    font-weight: 400;
+    src:
+      url('/fonts/Lobster.woff') format('woff'),
+      url('/fonts/Lobster.ttf') format('truetype');
+  }
+}
+
 
 .btn-cta {
   box-shadow: 0 4px 8px 2px #0b3662e0;
 }
-
-p.logo {
-  text-shadow: 4px 0 0 #0b4da5;
+.hero{
+  height: 100vh;
+  background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
 }
 
 @layer components {
+  #image-random{
+    @apply flex flex-col justify-end w-3/4 lg:max-w-[473px] lg:h-[550px];
+    background: linear-gradient(0deg, #7a6d47 0%, #03a9f4 100%);
+    border-radius: 50% 50% 0 0;
+  }
+  #image-random >img {
+    @apply w-full;
+  }
+
+    button.filter-selected svg path {
+    @apply fill-dark;
+  }
+  button.filter-unselected svg path {
+    @apply fill-light;
+  }
+  .filter-selected{
+    @apply flex justify-center items-center py-1 px-2 gap-1 cursor-pointer text-dark font-bold bg-links-cta rounded;
+  }
+  .filter-unselected{
+    @apply flex justify-center items-center py-1 px-2 text-light gap-1 cursor-pointer bg-dark rounded font-bold;
+  }
   .container-events {
     @apply h-min py-12 gap-4 w-4/5 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
@@ -25,12 +74,12 @@ p.logo {
     box-shadow: 0 10px 12px 4px #00000050;
   }
 
-  .photoEvent {
+  .photo-event {
     @apply w-full h-40 relative;
   }
 
-  .photoEvent > img {
-    @apply w-full h-full object-cover rounded-tl-2xl rounded-tr-2xl;
+  .photo-event > img {
+    @apply w-full h-[160px] object-cover rounded-tl-2xl rounded-tr-2xl;
   }
 
   .info-card {
@@ -47,7 +96,6 @@ p.logo {
 
   .icons-bar {
     @apply w-full py-2.5 bg-light rounded-[80px] flex flex-row flex-wrap justify-evenly;
-
     box-shadow: 0 2px 4px #00000050;
   }
 
