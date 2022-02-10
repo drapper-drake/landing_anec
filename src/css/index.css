@@ -42,6 +42,18 @@ p.logo {
   text-shadow: 4px 0 0 #0b4da5;
 }
 @layer components {
+    button.filter-selected svg path {
+    @apply fill-dark;
+  }
+  button.filter-unselected svg path {
+    @apply fill-light;
+  }
+  .filter-selected{
+    @apply flex justify-center items-center py-1 px-2 gap-1 cursor-pointer text-dark font-bold bg-links-cta rounded;
+  }
+  .filter-unselected{
+    @apply flex justify-center items-center py-1 px-2 text-light gap-1 cursor-pointer bg-dark rounded font-bold;
+  }
   .container-events {
     @apply h-min py-12 gap-4 w-4/5 font-sans text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
