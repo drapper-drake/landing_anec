@@ -22,7 +22,7 @@ module.exports = {
       "contrast-bg-dark": "#ffa438",
       "links-cta": "#ffa438",
       "links-visited": "#8197ba",
-      "neutral":{
+      "neutral": {
         100: "#f5f5f5",
         200: "#e5e5e5",
         300: "#d4d4d4",
@@ -37,7 +37,7 @@ module.exports = {
     fontFamily: {
       sans: ["Be Vietnam Pro", "sans-serif"],
       serif: ["Merriweather", "serif"],
-      lobster: ["Lobster Two", "cursive"],
+      lobster: ["Lobster", "cursive"],
 
     },
   },
