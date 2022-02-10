@@ -236,12 +236,15 @@ allCTA.forEach((btn) =>
   })
 );
 function randomImageHeader() {
-  const SRC_IMAGES = ["/img/header/party.png", "/img/header/play.webp", "/img/header/food.webp", "/img/header/kids.webp", "/img/header/play.webp", "/img/header/music.webp", "/img/header/sport.webp", "/img/header/museum.webp", "/img/header/theatre.webp"]
-  const randomNumber = () => Math.trunc(Math.random() * SRC_IMAGES.length);
-  const container = document.querySelector("#image-random")
-  let img = document.createElement('img')
-  img.src = SRC_IMAGES[randomNumber()]
-  container.appendChild(img)
+  const category = ["party", "play", "food", "kids", "play", "music", "sport", "museum", "theatre"]
+  const randomNumber = () => Math.trunc(Math.random() * category.length);
+  const imageRandom = category[randomNumber()];
+  const altImg = { "party": "Imagen de patos de fiesta", "play": "Imagen de patos disfrutando de una barbacoa", "food": "Imagen de un pato en un restaurante", "kids": "Imagen de patitos echando una carrera", "music": "Imagen de pato saxofonista", "sport": "Imagen de pato haciendo una ruta y avistando aves", "museum": "Imagen de pato en el museo", "theatre": "Imagen de obra de teatro con brujas con patos" }
+  const container = document.querySelector("#image-random");
+  let img = document.createElement('img');
+  img.src = `/img/header/${imageRandom}.webp`;
+  img.alt = altImg[imageRandom];
+  container.appendChild(img);
 }
 window.addEventListener("DOMContentLoaded", () => {
   randomImageHeader();

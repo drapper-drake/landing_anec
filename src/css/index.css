@@ -32,21 +32,16 @@
       url('/fonts/Lobster.ttf') format('truetype');
   }
 }
-/*Fondos de la cabecera*/
-.party{
-  background-image:
-    url("/img/header/Fiesta.webp"),
-    url("/img/header/Fiesta.png");
-    background: size 473px; ;
-}
+
 
 .btn-cta {
   box-shadow: 0 4px 8px 2px #0b3662e0;
 }
-
-p.logo {
-  text-shadow: 4px 0 0 #0b4da5;
+.hero{
+  height: 100vh;
+  background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
 }
+
 @layer components {
   #image-random{
     @apply flex flex-col justify-end w-3/4 lg:max-w-[473px] lg:h-[550px];
@@ -56,11 +51,7 @@ p.logo {
   #image-random >img {
     @apply w-full;
   }
-  .hero{
-    @apply mb-36 bg-contain flex flex-row justify-center md:justify-end items-center relative;
-    height: 100vh;
-    background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
-  }
+
     button.filter-selected svg path {
     @apply fill-dark;
   }
