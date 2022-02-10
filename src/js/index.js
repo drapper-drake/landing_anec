@@ -24,9 +24,9 @@ function createAll() {
         if (data[evento].hasOwnProperty("dateFinal")) {
           data[evento].dateFinal = new Date(data[evento].dateFinal);
         }
-        // if (isCurrentEventActive(evento) === true) {
-        allEvents.push(data[evento]);
-        // }
+        if (isCurrentEventActive(data[evento])) {
+          allEvents.push(data[evento]);
+        }
       }
       allEvents.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
@@ -34,8 +34,7 @@ function createAll() {
     });
 }
 function isCurrentEventActive(eventCurrent) {
-  const TODAY = new Date().getTime();
-  console.log(eventCurrent, eventCurrent.dateStart)
+  const TODAY = new Date();
   const startEvent = eventCurrent.dateStart.getTime()
   if (TODAY < startEvent) {
     return true;
