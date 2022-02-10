@@ -1,4 +1,5 @@
 import { listSrcCategories } from "./listSrcTitlesCategories.js";
+
 const allEvents = [];
 let activeCategory = "all";
 function createAll() {
@@ -15,15 +16,37 @@ function createAll() {
           .toLowerCase()
           .replace(/ /g, "-")
           .replace(/[^\w-]+/g, "");
+        //Reajusta el tamaño de las imágenes de las tarjetas desde la URL
         data[evento].photoEvent = data[evento].photoEvent.replace("upload", "upload/w_500").replace("jpg", "webp");
         data[evento].id = idEvent;
+        //hace directamente la función changeFormatData
+        data[evento].dateStart = new Date(data[evento].dateStart);
+        if (data[evento].hasOwnProperty("dateFinal")) {
+          data[evento].dateFinal = new Date(data[evento].dateFinal);
+        }
+        // if (isCurrentEventActive(evento) === true) {
         allEvents.push(data[evento]);
+        // }
       }
-      changeformatDateJSON();
       allEvents.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
       createEvent(content, responsiveNumberOfEvents(allEvents));
     });
+}
+function isCurrentEventActive(eventCurrent) {
+  const TODAY = new Date().getTime();
+  console.log(eventCurrent, eventCurrent.dateStart)
+  const startEvent = eventCurrent.dateStart.getTime()
+  if (TODAY < startEvent) {
+    return true;
+  }
+  if (eventCurrent.hasOwnProperty("dateFinal")) {
+    const finishEvent = eventCurrent.dateFinal.getTime()
+    if (TODAY >= startEvent && TODAY <= finishEvent) {
+      return true;
+    }
+  }
+  return false;
 }
 function responsiveNumberOfEvents(list) {
   let numberOfEvents = 8;
@@ -34,14 +57,6 @@ function responsiveNumberOfEvents(list) {
     numberOfEvents = list.length;
   }
   return list.slice(0, numberOfEvents);
-}
-function changeformatDateJSON() {
-  for (const index in allEvents) {
-    allEvents[index].dateStart = new Date(allEvents[index].dateStart);
-    if (allEvents[index].hasOwnProperty("dateFinal")) {
-      allEvents[index].dateFinal = new Date(allEvents[index].dateFinal);
-    }
-  }
 }
 
 // ESTA FUNCIÓN CREA CADA TARJETA DE EVENTO
@@ -196,12 +211,8 @@ const ChangeStyleAndFilter = (div) => {
     DivFilterCategory.forEach(div => {
       div.className = "filter-unselected";
     });
-
     div.className = "filter-selected";
     const idCategory = e.currentTarget.id;
-    // // Cambio Color SVG
-    // document.querySelectorAll("svg >path").forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
-    // document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")); // El seleccionado pasa Azul
     activeCategory = idCategory;
     filterByCategory(idCategory);
   });
