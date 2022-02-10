@@ -44,12 +44,12 @@
 
 @layer components {
   #image-random{
-    @apply flex flex-col justify-end w-3/4 lg:max-w-[473px] lg:h-[550px];
+    @apply flex flex-col justify-end items-center w-3/4 lg:max-w-[473px] lg:h-[550px];
     background: linear-gradient(0deg, #7a6d47 0%, #03a9f4 100%);
     border-radius: 50% 50% 0 0;
   }
   #image-random >img {
-    @apply w-full;
+    @apply w-[200px] md:w-[300px] lg:w-full;
   }
 
     button.filter-selected svg path {
