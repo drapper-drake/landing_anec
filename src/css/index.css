@@ -42,6 +42,11 @@ p.logo {
   text-shadow: 4px 0 0 #0b4da5;
 }
 @layer components {
+  .hero{
+    @apply mb-36 bg-contain flex flex-row justify-center md:justify-end items-center relative;
+    height: 100vh;
+    background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
+  }
     button.filter-selected svg path {
     @apply fill-dark;
   }
