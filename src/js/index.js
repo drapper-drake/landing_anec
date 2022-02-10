@@ -104,6 +104,7 @@ function createEvent(container, listEvents) {
     infoSR.className = "sr-only"
     infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago"
     let infoCategoriesSR = document.createElement('p')
+    infoCategoriesSR.tabIndex = "0"
     infoCategoriesSR.className = "sr-only"
     infoCategoriesSR.innerText = 'Categorias del evento:'
     container.appendChild(containerCard);
@@ -122,6 +123,7 @@ function createEvent(container, listEvents) {
     freeIconContainer.className = "tooltip";
     const freeIcon = document.createElement("img");
     const freeIconText = document.createElement("span");
+    freeIcon.tabIndex = "0  "
     freeIconText.className = "tooltip-text";
     photoEvent.appendChild(freeIconContainer);
     freeIconContainer.appendChild(freeIcon);
