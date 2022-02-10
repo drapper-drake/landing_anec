@@ -64,15 +64,18 @@ function createEvent(container, listEvents) {
     infoCard.className = "info-card";
     // NOMBRE
     const name = document.createElement("h3");
+    name.tabIndex = "0"
     name.innerText = listEvents[position].nameEvent;
     // LUGAR
     const place = document.createElement("p");
+    place.tabIndex = "0"
     place.innerText = listEvents[position].cityLocation;
     // BARRA DE ICONOS
     const bar = document.createElement("div");
     bar.className = "icons-bar";
     // FECHA
     const date = document.createElement("p");
+    date.tabIndex = "0"
     date.innerText = `Solo el ${dateStart}`;
     if (listEvents[position].hasOwnProperty("dateFinal")) {
       const dateF = dateFormat(listEvents[position].dateFinal, true);
@@ -83,7 +86,12 @@ function createEvent(container, listEvents) {
         date.innerText = "Todo el año";
       }
     }
-
+    let infoSR = document.createElement('p')
+    infoSR.className = "sr-only"
+    infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago"
+    let infoCategoriesSR = document.createElement('p')
+    infoCategoriesSR.className = "sr-only"
+    infoCategoriesSR.innerText = 'Categorias del evento:'
     container.appendChild(containerCard);
     containerCard.appendChild(photoEvent);
     photoEvent.appendChild(image);
@@ -91,7 +99,9 @@ function createEvent(container, listEvents) {
     infoCard.appendChild(name);
     infoCard.appendChild(place);
     infoCard.appendChild(date);
+    infoCard.appendChild(infoSR);
     infoCard.appendChild(bar);
+    bar.appendChild(infoCategoriesSR);
 
     // ICONO GRATUITO / DE PAGO
     const freeIconContainer = document.createElement("div");
@@ -130,9 +140,10 @@ function createEvent(container, listEvents) {
       const categoryIcon = document.createElement("img");
       const categoryIconInfo = document.createElement("p");
       // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
+      categoryIconInfo.tabIndex = "0"
       categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
       categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
-      categoryIcon.alt = listSrcCategories[listEvents[position].category[cat]].nameIconEvent;
+      categoryIcon.alt = "Icono de" + listSrcCategories[listEvents[position].category[cat]].nameIconEvent;
       bar.appendChild(categoryIconContainer);
       categoryIconContainer.appendChild(categoryIcon);
       categoryIconContainer.appendChild(categoryIconInfo);
@@ -182,23 +193,21 @@ function resetAndCreateEventsFiltered(listFiltered) {
 }
 const ChangeStyleAndFilter = (div) => {
   div.addEventListener("click", (e) => {
-    const navSelected = "flex justify-center items-center py-1 px-2 cursor-pointer text-dark font-bold bg-links-cta rounded";
-    const navUnselected = "flex justify-center items-center py-1 px-2 cursor-pointer font-bold bg-dark rounded";
     DivFilterCategory.forEach(div => {
-      div.className = navUnselected;
+      div.className = "filter-unselected";
     });
 
-    div.className = navSelected;
+    div.className = "filter-selected";
     const idCategory = e.currentTarget.id;
-    // Cambio Color SVG
-    document.querySelectorAll("svg >path").forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
-    document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")); // El seleccionado pasa Azul
+    // // Cambio Color SVG
+    // document.querySelectorAll("svg >path").forEach(path => path.classList.remove("fill-dark")); // Pasan todos a Blanco
+    // document.querySelectorAll(`#icon-${idCategory} >path`).forEach(path => path.classList.add("fill-dark")); // El seleccionado pasa Azul
     activeCategory = idCategory;
     filterByCategory(idCategory);
   });
 };
 
-const DivFilterCategory = document.querySelectorAll(".navegation > div");
+const DivFilterCategory = document.querySelectorAll(".navegation > button");
 DivFilterCategory.forEach(ChangeStyleAndFilter);
 const filterByCategory = (category) => {
   if (category === "all") {
