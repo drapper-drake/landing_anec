@@ -38,18 +38,17 @@
   box-shadow: 0 4px 8px 2px #0b3662e0;
 }
 .hero{
-  height: 100vh;
   background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
 }
 
 @layer components {
   #image-random{
-    @apply flex flex-col justify-end items-center w-3/4 lg:max-w-[473px] lg:h-[550px];
+    @apply flex flex-col justify-end items-center w-[200px] lg:min-w-[473px];
     background: linear-gradient(0deg, #7a6d47 0%, #03a9f4 100%);
     border-radius: 50% 50% 0 0;
   }
   #image-random >img {
-    @apply w-[200px] md:w-[300px] lg:w-full;
+    @applylg:w-full;
   }
 
     button.filter-selected svg path {
