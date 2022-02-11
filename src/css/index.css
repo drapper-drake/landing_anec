@@ -37,12 +37,13 @@
 .btn-cta {
   box-shadow: 0 4px 8px 2px #0b3662e0;
 }
-.hero{
-  height: 100vh;
-  background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%);
-}
 
 @layer components {
+  .hero{
+    @apply: lg:h-screen;
+    background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%);
+
+  }
   #image-random{
     @apply flex flex-col justify-end items-center lg:min-w-[473px];
     background: linear-gradient(0deg, #7a6d47 0%, #03a9f4 100%);
@@ -50,9 +51,11 @@
     border-radius: 50% 50% 0 0;
   }
   #image-random >img {
-    @applylg: w-full;
+    @apply lg:w-full;
   }
-
+  .images-landing{
+    @apply w-72 flex flex-col justify-center items-center  my-6;
+  }
     button.filter-selected svg path {
     @apply fill-dark;
   }
