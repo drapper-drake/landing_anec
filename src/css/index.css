@@ -39,17 +39,18 @@
 }
 .hero{
   height: 100vh;
-  background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%)
+  background: linear-gradient(0deg, #0b4da5 0%, #0b3762 100%);
 }
 
 @layer components {
   #image-random{
-    @apply flex flex-col justify-end w-3/4 lg:max-w-[473px] lg:h-[550px];
+    @apply flex flex-col justify-end items-center lg:min-w-[473px];
     background: linear-gradient(0deg, #7a6d47 0%, #03a9f4 100%);
+    width: 200px;
     border-radius: 50% 50% 0 0;
   }
   #image-random >img {
-    @apply w-full;
+    @applylg: w-full;
   }
 
     button.filter-selected svg path {
