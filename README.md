@@ -8,14 +8,16 @@ Este repositorio constituye la Landing Page creada para el proyecto Ànec Events
 
 ## Tabla de contenidos
 
-- [Vista general](#vista-general)
-  - [Enlace a la web](#enlace-a-la-web)
-  - [Capturas en ordenador](#capturas-en-ordenador)
-  - [Capturas en móvil](#capturas-en-móvil)
-- [Desarrollo](#desarrollo)
-  - [Tecnologías](#tecnologías)
-  - [Reproducir en local](#reproducir-en-local)
-- [Autores](#autores)
+- [Anec Events](#anec-events)
+  - [Tabla de contenidos](#tabla-de-contenidos)
+  - [Vista General](#vista-general)
+    - [Enlace a la web](#enlace-a-la-web)
+    - [Capturas en ordenador](#capturas-en-ordenador)
+    - [Capturas en móvil](#capturas-en-móvil)
+  - [Desarrollo](#desarrollo)
+    - [Tecnologías](#tecnologías)
+    - [Reproducir en local](#reproducir-en-local)
+  - [Autores](#autores)
 
 ## Vista General
 
@@ -28,9 +30,9 @@ https://www.app.anecevents.com/
 
 
 ### Capturas en ordenador
-
+![Captura en ordenador](./public/img/desktop-landing.png)
 ### Capturas en móvil
-
+![Captura en móvil](./public/img/mobile-landing.png)
 ## Desarrollo
 ### Tecnologías
 - Maquetación: HTML5

@@ -104,7 +104,7 @@ function createEvent(container, listEvents) {
     infoSR.className = "sr-only"
     infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago"
     let infoCategoriesSR = document.createElement('p')
-    infoCategoriesSR.tabIndex = "0"
+    infoCategoriesSR.tabIndex = "0          "
     infoCategoriesSR.className = "sr-only"
     infoCategoriesSR.innerText = 'Categorias del evento:'
     container.appendChild(containerCard);
@@ -144,7 +144,7 @@ function createEvent(container, listEvents) {
       const charityIcon = document.createElement("img");
       const charityIconText = document.createElement("p");
       charityIconText.textContent = "Benéfico";
-      charityIcon.alt = " ";
+      charityIcon.alt = "Benéfico";
       charityIcon.src = "./img/icons/Charity.svg";
       bar.appendChild(charityIconContainer);
       charityIconContainer.appendChild(charityIcon);
