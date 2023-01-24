@@ -10,23 +10,20 @@ function createAll() {
       // data es un array de eventos
       const content = document.querySelector(".container-events");
       for (const evento in data) {
-
         let idEvent = data[evento].nameEvent;
         idEvent = idEvent
           .toLowerCase()
           .replace(/ /g, "-")
           .replace(/[^\w-]+/g, "");
-        //Reajusta el tamaño de las imágenes de las tarjetas desde la URL
+        // Reajusta el tamaño de las imágenes de las tarjetas desde la URL
         data[evento].photoEvent = data[evento].photoEvent.replace("upload", "upload/w_500").replace("jpg", "webp");
         data[evento].id = idEvent;
-        //hace directamente la función changeFormatData
+        // hace directamente la función changeFormatData
         data[evento].dateStart = new Date(data[evento].dateStart);
         if (data[evento].hasOwnProperty("dateFinal")) {
           data[evento].dateFinal = new Date(data[evento].dateFinal);
         }
-        if (isCurrentEventActive(data[evento])) {
-          allEvents.push(data[evento]);
-        }
+        allEvents.push(data[evento]);
       }
       allEvents.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
@@ -35,12 +32,12 @@ function createAll() {
 }
 function isCurrentEventActive(eventCurrent) {
   const TODAY = new Date();
-  const startEvent = eventCurrent.dateStart.getTime()
+  const startEvent = eventCurrent.dateStart.getTime();
   if (TODAY < startEvent) {
     return true;
   }
   if (eventCurrent.hasOwnProperty("dateFinal")) {
-    const finishEvent = eventCurrent.dateFinal.getTime()
+    const finishEvent = eventCurrent.dateFinal.getTime();
     if (TODAY >= startEvent && TODAY <= finishEvent) {
       return true;
     }
@@ -78,18 +75,18 @@ function createEvent(container, listEvents) {
     infoCard.className = "info-card";
     // NOMBRE
     const name = document.createElement("h3");
-    name.tabIndex = "0"
+    name.tabIndex = "0";
     name.innerText = listEvents[position].nameEvent;
     // LUGAR
     const place = document.createElement("p");
-    place.tabIndex = "0"
+    place.tabIndex = "0";
     place.innerText = listEvents[position].cityLocation;
     // BARRA DE ICONOS
     const bar = document.createElement("div");
     bar.className = "icons-bar";
     // FECHA
     const date = document.createElement("p");
-    date.tabIndex = "0"
+    date.tabIndex = "0";
     date.innerText = `Solo el ${dateStart}`;
     if (listEvents[position].hasOwnProperty("dateFinal")) {
       const dateF = dateFormat(listEvents[position].dateFinal, true);
@@ -100,13 +97,13 @@ function createEvent(container, listEvents) {
         date.innerText = "Todo el año";
       }
     }
-    let infoSR = document.createElement('p')
-    infoSR.className = "sr-only"
-    infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago"
-    let infoCategoriesSR = document.createElement('p')
-    infoCategoriesSR.tabIndex = "0          "
-    infoCategoriesSR.className = "sr-only"
-    infoCategoriesSR.innerText = 'Categorias del evento:'
+    const infoSR = document.createElement("p");
+    infoSR.className = "sr-only";
+    infoSR.innerText = listEvents[position].free ? "Evento Gratuito" : "Evento de Pago";
+    const infoCategoriesSR = document.createElement("p");
+    infoCategoriesSR.tabIndex = "0          ";
+    infoCategoriesSR.className = "sr-only";
+    infoCategoriesSR.innerText = "Categorias del evento:";
     container.appendChild(containerCard);
     containerCard.appendChild(photoEvent);
     photoEvent.appendChild(image);
@@ -123,7 +120,7 @@ function createEvent(container, listEvents) {
     freeIconContainer.className = "tooltip";
     const freeIcon = document.createElement("img");
     const freeIconText = document.createElement("span");
-    freeIcon.tabIndex = "0  "
+    freeIcon.tabIndex = "0  ";
     freeIconText.className = "tooltip-text";
     photoEvent.appendChild(freeIconContainer);
     freeIconContainer.appendChild(freeIcon);
@@ -156,7 +153,7 @@ function createEvent(container, listEvents) {
       const categoryIcon = document.createElement("img");
       const categoryIconInfo = document.createElement("p");
       // ? ListSrcCategories es un objeto con cada tipo de categoria y toda su info
-      categoryIconInfo.tabIndex = "0"
+      categoryIconInfo.tabIndex = "0";
       categoryIconInfo.textContent = listSrcCategories[listEvents[position].category[cat]].nameIconEvent || console.error("Esta categoria no existe", listEvents[position].category[cat]);
       categoryIcon.src = listSrcCategories[listEvents[position].category[cat]].iconEvent;
       categoryIcon.alt = "Icono de" + listSrcCategories[listEvents[position].category[cat]].nameIconEvent;
@@ -238,12 +235,12 @@ allCTA.forEach((btn) =>
   })
 );
 function randomImageHeader() {
-  const category = ["party", "play", "food", "kids", "play", "music", "sport", "museum", "theatre"]
+  const category = ["party", "play", "food", "kids", "play", "music", "sport", "museum", "theatre"];
   const randomNumber = () => Math.trunc(Math.random() * category.length);
   const imageRandom = category[randomNumber()];
-  const altImg = { "party": "Imagen de patos de fiesta", "play": "Imagen de patos disfrutando de una barbacoa", "food": "Imagen de un pato en un restaurante", "kids": "Imagen de patitos echando una carrera", "music": "Imagen de pato saxofonista", "sport": "Imagen de pato haciendo una ruta y avistando aves", "museum": "Imagen de pato en el museo", "theatre": "Imagen de obra de teatro con brujas con patos" }
+  const altImg = { party: "Imagen de patos de fiesta", play: "Imagen de patos disfrutando de una barbacoa", food: "Imagen de un pato en un restaurante", kids: "Imagen de patitos echando una carrera", music: "Imagen de pato saxofonista", sport: "Imagen de pato haciendo una ruta y avistando aves", museum: "Imagen de pato en el museo", theatre: "Imagen de obra de teatro con brujas con patos" };
   const container = document.querySelector("#image-random");
-  let img = document.createElement('img');
+  const img = document.createElement("img");
   img.src = `/img/header/${imageRandom}.webp`;
   img.alt = altImg[imageRandom];
   container.appendChild(img);
