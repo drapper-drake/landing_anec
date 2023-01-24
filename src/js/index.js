@@ -231,7 +231,8 @@ const filterByCategory = (category) => {
 const allCTA = document.querySelectorAll(".btn-cta");
 allCTA.forEach((btn) =>
   btn.addEventListener("click", () => {
-    window.location.href = "https://www.app.anecevents.com/";
+    // window.location.href = "https://www.app.anecevents.com/";
+    window.location.href = "https://app-anecevents.netlify.app/";
   })
 );
 function randomImageHeader() {

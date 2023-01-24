@@ -8,16 +8,6 @@ Este repositorio constituye la Landing Page creada para el proyecto Ànec Events
 
 ## Tabla de contenidos
 
-<<<<<<< HEAD
-- [Vista general](#vista-general)
-  - [Enlace a la web](#enlace-a-la-web)
-  - [Captura en ordenador](#captura-en-ordenador)
-  - [Captura en móvil](#captura-en-móvil)
-- [Desarrollo](#desarrollo)
-  - [Tecnologías](#tecnologías)
-  - [Reproducir en local](#reproducir-en-local)
-- [Autores](#autores)
-=======
 - [Anec Events](#anec-events)
   - [Tabla de contenidos](#tabla-de-contenidos)
   - [Vista General](#vista-general)
@@ -28,7 +18,6 @@ Este repositorio constituye la Landing Page creada para el proyecto Ànec Events
     - [Tecnologías](#tecnologías)
     - [Reproducir en local](#reproducir-en-local)
   - [Autores](#autores)
->>>>>>> width-images-optimization
 
 ## Vista General
 
@@ -40,18 +29,10 @@ Accede a la web principal de [Ànec Events](https://github.com/drapper-drake/lan
 https://www.app.anecevents.com/
 
 
-<<<<<<< HEAD
-### Captura en ordenador
-![Captura de pantalla en ordenador](./public/img/anecevents-desktop.png)
-
-### Captura en móvil
-![Captura de pantalla en móvil](./public/img/anecevents-mobile.png)
-=======
 ### Capturas en ordenador
 ![Captura en ordenador](./public/img/desktop-landing.png)
 ### Capturas en móvil
 ![Captura en móvil](./public/img/mobile-landing.png)
->>>>>>> width-images-optimization
 ## Desarrollo
 ### Tecnologías
 - Maquetación: HTML5
